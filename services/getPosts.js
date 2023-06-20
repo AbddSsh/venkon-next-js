@@ -14,9 +14,9 @@ export const getPostBySearch = async (search) => {
   return response.json();
 };
 
-export const getWhyWeData = async (id) => {
+export const getWhyWeData = async (id, lang) => {
   const response = await fetch(
-    `${baseUrl}/vencon/user/page?page_id=${id}&language=ru`
+    `${baseUrl}/vencon/user/page?page_id=${id}&language=${lang}`
   );
   if (!response.ok) throw new Error("Unable to fetch page...");
   return response.json();

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { GrClose } from "react-icons/gr";
 import ContactsBlock from "./contactsBlock";
 
-function Contact() {
+function Contact({ lng }) {
   const [showContact, setShowContact] = useState(false);
 
   const handleContact = () => {
@@ -27,7 +27,11 @@ function Contact() {
     <>
       <div style={{ position: "relative" }} className="contact-us">
         <button className="contact-us-btn" onClick={handleContact}>
-          Связаться с нами
+          {lng === "ru"
+            ? "Связаться с нами"
+            : lng === "en"
+            ? "Contact Us"
+            : "Biz bilan bo'glanish"}
         </button>
         <div className="contact-wrapper">
           <div
@@ -55,10 +59,14 @@ function Contact() {
                   textAlign: "center",
                 }}
               >
-                Связаться с нами
+                {lng === "ru"
+                  ? "Связаться с нами"
+                  : lng === "en"
+                  ? "Contact Us"
+                  : "Biz bilan bo'glanish"}
               </div>
             </div>
-            <ContactsBlock handleContact={handleContact} />
+            <ContactsBlock handleContact={handleContact} lng={lng} />
           </div>
         </div>
       </div>

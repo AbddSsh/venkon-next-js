@@ -1,11 +1,20 @@
 "use client";
 
+import { languages } from "@/app/i18n/settings";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Language = () => {
-  const [selectedLang, setSelectedLang] = useState("RU");
+const Language = ({ lng }) => {
   const [showLang, setShowLang] = useState(false);
+  const pathname = usePathname();
+  const segments = pathname.split("/");
+  const path =
+    segments.length > 2 ? `/${segments[segments.length - 1]}` : false;
+  // const router = useRouter();
+  // console.log(router);
   const handleLang = () => {
     setShowLang(!showLang);
   };
@@ -25,33 +34,19 @@ const Language = () => {
   }, []);
   return (
     <div onClick={handleLang} className="lang__block">
-      <span>{selectedLang}</span>
+      <span>{lng.toUpperCase()}</span>
       <IoIosArrowDown style={{ marginLeft: "5px" }} />
       <div className="lang" style={{ display: !showLang && "none" }}>
-        <div
-          onClick={() => {
-            setSelectedLang("RU");
-          }}
-          className="lang__item"
-        >
-          RU
-        </div>
-        <div
-          onClick={() => {
-            setSelectedLang("UZ");
-          }}
-          className="lang__item"
-        >
-          UZ
-        </div>
-        <div
-          onClick={() => {
-            setSelectedLang("EN");
-          }}
-          className="lang__item"
-        >
-          EN
-        </div>
+        {languages.map((lang) => (
+          <div key={lang} className="lang__item">
+            <Link
+              href={path ? `/${lang + path}` : `/${lang}`}
+              className="languages"
+            >
+              {lang.toUpperCase()}
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

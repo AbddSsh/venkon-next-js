@@ -8,9 +8,3 @@ module.exports = {
     domains: ["static.wixstatic.com"],
   },
 };
-
-// module.exports = {
-//   experimental: {
-//     serverActions: true,
-//   },
-// };

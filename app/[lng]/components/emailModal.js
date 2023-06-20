@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Modal from "react-bootstrap/Modal";
 import { HiOutlineMail } from "react-icons/hi";
 
-const EmailModal = () => {
+const EmailModal = ({ lng }) => {
   const [showModal, setShowModal] = useState(false);
   const handleModal = () => {
     setShowModal(!showModal);
@@ -25,11 +25,17 @@ const EmailModal = () => {
   return (
     <div className="email">
       <button className="email-btn" onClick={handleModal}>
-        Email <HiOutlineMail style={{ fontSize: "24px", marginLeft: "5px" }} />
+        Email <HiOutlineMail size={24} />
       </button>
       <Modal show={showModal} onHide={handleModal}>
         <Modal.Header closeButton style={{ border: "none" }}>
-          <Modal.Title>Связаться с нами</Modal.Title>
+          <Modal.Title>
+            {lng === "ru"
+              ? "Связаться с нами"
+              : lng === "en"
+              ? "Contact Us"
+              : "Biz bilan bo'glanish"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -41,7 +47,7 @@ const EmailModal = () => {
               }}
             >
               <label className="form-title">
-                Имя:
+                {lng === "ru" ? "Имя" : lng === "en" ? "First Name" : "Ism"}
                 <input
                   placeholder="Gomer"
                   className="form-input"
@@ -52,7 +58,11 @@ const EmailModal = () => {
                 />
               </label>
               <label className="form-title">
-                Фамилия:
+                {lng === "ru"
+                  ? "Фамилия"
+                  : lng === "en"
+                  ? "Last Name"
+                  : "Familiya"}
                 <input
                   placeholder="Simpson"
                   className="form-input"
@@ -63,7 +73,7 @@ const EmailModal = () => {
                 />
               </label>
               <label className="form-title">
-                Email:
+                Email
                 <input
                   placeholder="name@domain.com"
                   className="form-input"
@@ -75,7 +85,11 @@ const EmailModal = () => {
                 />
               </label>
               <label className="form-title">
-                Phone number:
+                {lng === "ru"
+                  ? "Телефон"
+                  : lng === "en"
+                  ? "Phone number"
+                  : "Telefon raqami"}
                 <input
                   defaultValue="+998"
                   type="tel"
@@ -91,7 +105,11 @@ const EmailModal = () => {
               </label>
               <div style={{ marginTop: "20px" }}>
                 <label className="form-title">
-                  Сообщение
+                  {lng === "ru"
+                    ? "Сообщение"
+                    : lng === "en"
+                    ? "Message"
+                    : "Xabar"}
                   <textarea
                     {...register("message", {
                       required: true,
@@ -114,7 +132,13 @@ const EmailModal = () => {
                   background: !isValid && "rgba(70,59,144, 0.4)",
                 }}
                 onClick={handleModal}
-                value={`Отправить сообщение`}
+                value={
+                  lng === "ru"
+                    ? "Отправить сообщение"
+                    : lng === "en"
+                    ? "Send message"
+                    : "Xabar yuborish"
+                }
               />
             </div>
           </form>

@@ -3,7 +3,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { BiPhoneCall } from "react-icons/bi";
 import EmailModal from "./emailModal";
 
-export default function ContactsBlock({ handleContact }) {
+export default function ContactsBlock({ handleContact, lng }) {
   return (
     <div className="contacts-block">
       <div style={{ textAlign: "center" }}>
@@ -33,11 +33,19 @@ export default function ContactsBlock({ handleContact }) {
           href="tel:+998901234567"
           style={{ color: "#fff", textDecoration: "none" }}
         >
-          Позвоните нам
-          <BiPhoneCall style={{ fontSize: "20px", marginLeft: "5px" }} />
+          {lng === "ru"
+            ? "Позвоните нам"
+            : lng === "en"
+            ? "Call us"
+            : "Bizga qo'ngíroq qiling"}
+          {lng === "ru" ? (
+            <BiPhoneCall size={20} />
+          ) : (
+            lng === "en" && <BiPhoneCall size={20} />
+          )}
         </a>
       </div>
-      <EmailModal onClick={handleContact} />
+      <EmailModal lng={lng} onClick={handleContact} />
     </div>
   );
 }

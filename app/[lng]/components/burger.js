@@ -6,7 +6,7 @@ import Language from "./language";
 import WhyWe from "./whywe";
 import { GrClose } from "react-icons/gr";
 
-const Burger = () => {
+const Burger = ({ lng = { lng } }) => {
   const [showBurger, setShowBurger] = useState(false);
   const handleBurger = () => {
     setShowBurger(!showBurger);
@@ -38,12 +38,12 @@ const Burger = () => {
             <GrClose className="burger-hide-btn" onClick={handleBurger} />
           </div>
           <div style={{ alignSelf: "end", marginTop: "-10px" }}>
-            <Language />
+            <Language lng={lng} />
           </div>
           <div onClick={handleBurger}>
-            <WhyWe />
+            <WhyWe lng={lng} />
           </div>
-          <ContactsBlock />
+          <ContactsBlock lng={lng} />
         </div>
       </div>
     </div>

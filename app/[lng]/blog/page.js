@@ -1,6 +1,6 @@
 "use client";
-import { PostSearch } from "@/components/PostSearch";
-import { Posts } from "@/components/Posts";
+import { PostSearch } from "@/app/[lng]/components/PostSearch";
+import { Posts } from "@/app/[lng]/components/Posts";
 import { getAllPosts } from "@/services/getPosts";
 import { useEffect, useState } from "react";
 

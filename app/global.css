@@ -2,6 +2,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 html,
 body {
@@ -25,6 +26,10 @@ main {
   color: rgb(30, 30, 30);
   text-decoration: none;
   margin: 5px;
+}
+.languages {
+  text-decoration: none;
+  color: #463b90;
 }
 .active {
   color: rgb(68, 180, 255);
@@ -73,6 +78,7 @@ footer {
   padding: 30px 20px 20px 20px;
   position: relative;
   background: #fff;
+  z-index: 99;
 }
 .contact-title {
   font-size: 20px;
@@ -91,7 +97,10 @@ footer {
   width: 100%;
   white-space: nowrap;
   text-align: center;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   font-weight: 600;
   color: #ffffff;
 }
@@ -110,6 +119,10 @@ footer {
   border-radius: 20px;
   padding: 10px 20px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   white-space: nowrap;
   text-align: center;
   border: 0.5px solid rgba(70, 59, 144, 0.5);
@@ -165,6 +178,7 @@ footer {
   box-shadow: 0px 3px 7px rgba(60, 60, 60, 0.3);
   padding: 10px;
   background: #fff;
+  z-index: 100;
 }
 .lang__item {
   font-weight: 700;
@@ -221,6 +235,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  z-index: 101;
 }
 .burger-body.active {
   transform: translateX(0);
@@ -234,27 +249,116 @@ footer {
   opacity: 0.4;
 }
 
+/* PAGE WHY VENKON */
+.why-cover-img {
+  position: relative;
+}
+.why-cover-title {
+  position: absolute;
+  font-weight: bold;
+  font-size: 56px;
+  left: 5%;
+  top: 10%;
+  z-index: 3;
+  max-width: 50%;
+}
+.why-cover-text {
+  position: absolute;
+  font-weight: 500;
+  font-size: 24px;
+  left: 5%;
+  bottom: 10%;
+  z-index: 4;
+  max-width: 50%;
+}
+
+.image-overlay {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  color: #ffffff;
+  z-index: 2;
+  border-radius: 50px;
+}
+.responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 30vw;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(2px);
+  z-index: 1;
+  border-radius: 50px;
+}
+
+/* MEDIA */
+@media (min-width: 2000px) {
+  .my-container {
+    padding: 20px 80px;
+  }
+  .responsive-image {
+    max-height: 600px;
+  }
+}
 @media (max-width: 1999px) {
   .my-container {
-    padding: 30px 80px;
+    padding: 20px 80px;
   }
 }
 @media (max-width: 1599px) {
   .my-container {
     padding: 20px 50px;
   }
+  .why-cover-title {
+    font-size: 42px;
+  }
+  .why-cover-text {
+    font-size: 20px;
+  }
 }
 @media (max-width: 1199px) {
   .my-container {
-    padding: 10px 50px;
+    padding: 10px 30px;
+  }
+  .why-cover-title {
+    font-size: 34px;
+  }
+  .why-cover-text {
+    font-size: 18px;
+  }
+  .image-overlay {
+    border-radius: 30px;
+  }
+  .responsive-image {
+    border-radius: 30px;
   }
 }
 @media (max-width: 991px) {
   .my-container {
-    padding: 10px 30px;
+    padding: 10px 20px;
+  }
+  .why-cover-title {
+    font-size: 30px;
+  }
+  .why-cover-text {
+    font-size: 16px;
+  }
+  .image-overlay {
+    border-radius: 25px;
+  }
+  .responsive-image {
+    border-radius: 25px;
   }
 }
-@media screen and (min-width: 769px) {
+@media (min-width: 769px) {
   .burger-desktop {
     display: none;
   }
@@ -267,10 +371,26 @@ footer {
     display: none;
   }
   .my-container {
-    padding: 10px 30px;
+    padding: 10px 15px;
+  }
+  .why-cover-title {
+    font-size: 22px;
+    left: 4%;
+    top: 7%;
+  }
+  .why-cover-text {
+    font-size: 14px;
+    left: 4%;
+    bottom: 7%;
+  }
+  .image-overlay {
+    border-radius: 20px;
+  }
+  .responsive-image {
+    border-radius: 20px;
   }
 }
-@media screen and (max-width: 576px) {
+@media (max-width: 576px) {
   .contact-wrapper {
     max-width: 200px;
   }
@@ -298,7 +418,7 @@ footer {
     font-size: 10px;
   }
   .my-container {
-    padding: 10px 20px;
+    padding: 10px 8px;
   }
   .img-block {
     max-width: 150px;
@@ -319,6 +439,22 @@ footer {
     padding: 5px 15px;
     font-size: 12px;
   }
+  .why-cover-title {
+    font-size: 16px;
+    left: 2%;
+  }
+  .why-cover-text {
+    font-size: 8px;
+    left: 2%;
+  }
+  .image-overlay {
+    border-radius: 15px;
+    top: -0.5px;
+  }
+  .responsive-image {
+    border-radius: 15px;
+    filter: blur(1px);
+  }
 }
 @media (max-width: 367px) {
   .contact-wrapper {
@@ -335,5 +471,17 @@ footer {
   }
   .contact-us-btn {
     padding: 5px 10px;
+  }
+  .why-cover-title {
+    font-size: 14px;
+  }
+  .why-cover-text {
+    font-size: 8px;
+  }
+  .image-overlay {
+    border-radius: 10px;
+  }
+  .responsive-image {
+    border-radius: 10px;
   }
 }

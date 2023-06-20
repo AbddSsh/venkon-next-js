@@ -3,12 +3,9 @@ import Contact from "./contact";
 import Language from "./language";
 import Burger from "./burger";
 import WhyWe from "./whywe";
+import Image from "next/image";
 
-const TheHeader = async () => {
-  // async function changeLang(lang) {
-  //   "use server";
-  //   console.log(lang);
-  // }
+const TheHeader = async ({ lng }) => {
   return (
     <header>
       <div
@@ -20,7 +17,7 @@ const TheHeader = async () => {
         className="my-container"
       >
         <div className="img-block">
-          <Link className="my-link" href="/">
+          <Link className="my-link" href={`/${lng}`}>
             <img
               style={{
                 width: "100%",
@@ -45,16 +42,15 @@ const TheHeader = async () => {
             }}
           >
             <div className="whywe-desktop">
-              <WhyWe />
+              <WhyWe lng={lng} />
             </div>
-
-            <Contact />
+            <Contact lng={lng} />
           </div>
           <div className="lang-desktop">
-            <Language />
+            <Language lng={lng} />
           </div>
           <div className="burger-desktop">
-            <Burger />
+            <Burger lng={lng} />
           </div>
         </div>
       </div>

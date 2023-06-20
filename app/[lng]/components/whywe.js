@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-export default function WhyWe() {
+export default function WhyWe({ lng }) {
   return (
     <Link
       className="my-link"
-      href="/why"
+      href={`${lng}/why`}
       style={{
         color: "#463B90",
         fontWeight: "600",
       }}
     >
-      Почему мы?
+      {lng === "ru" ? "Почему мы?" : lng === "en" ? "Why we?" : "Nega biz?"}
     </Link>
   );
 }
