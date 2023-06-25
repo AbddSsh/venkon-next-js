@@ -9,8 +9,14 @@ body {
   height: 100%;
 }
 .wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   min-height: 100vh;
   max-width: 2000px;
   margin: 0 auto;
@@ -44,6 +50,7 @@ main {
   padding-bottom: 90px;
 } */
 header {
+  -webkit-background: #ffffff;
   background: #ffffff;
 }
 .img-block {
@@ -92,13 +99,25 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  gap: var(--gap-size, 15px);
+  gap: -webkit-var(--gap-size, 15px);
 }
 .contacts-media {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
   justify-content: center;
-  gap: 10;
+  gap: 10px;
+  -webkit-gap: 10px;
+  gap: var(--gap-size, 10px);
+  -webkit-gap: var(--gap-size, 10px);
+  gap: -webkit-var(--gap-size, 10px);
+  -webkit-gap: -webkit-var(--gap-size, 10px);
 }
+
 .call-us-btn {
   border-radius: 20px;
   background: #463b90;
@@ -109,7 +128,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
   gap: 5px;
+  gap: var(--gap-size, 5px);
+  gap: -webkit-var(--gap-size, 5px);
   font-weight: 600;
   color: #ffffff;
 }
@@ -130,8 +153,12 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
   align-items: center;
   gap: 5px;
+  gap: var(--gap-size, 5px);
+  gap: -webkit-var(--gap-size, 5px);
   white-space: nowrap;
   text-align: center;
   border: 0.5px solid rgba(70, 59, 144, 0.5);
@@ -147,6 +174,7 @@ footer {
   font-size: 14px;
 }
 .number-input {
+  -webkit-appearance: textfield;
   -moz-appearance: textfield; /* Firefox */
   appearance: textfield; /* For other browsers */
 }
@@ -170,6 +198,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   cursor: pointer;
   position: relative;
 }
@@ -203,7 +232,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-justify-content: center;
   gap: 10px;
+  gap: var(--gap-size, 10px);
+  gap: -webkit-var(--gap-size, 10px);
 }
 .burger-lang__item {
   font-weight: 700;
@@ -224,6 +256,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: end;
+  -webkit-justify-content: end;
   cursor: pointer;
 }
 .burger-btn::before {
@@ -265,6 +298,8 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  gap: var(--gap-size, 15px);
+  gap: -webkit-var(--gap-size, 15px);
   z-index: 101;
 }
 .burger-body.active {
@@ -323,6 +358,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  -webkit-justify-content: flex-start;
   padding-left: 20px;
   color: #ffffff;
   z-index: 2;
@@ -351,6 +387,9 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
 }
 .sec-img-wrap {
   position: relative;
@@ -372,6 +411,7 @@ footer {
   display: flex;
   align-items: start;
   justify-content: flex-start;
+  -webkit-justify-content: flex-start; 
   padding: 5%;
   z-index: 2;
   border-radius: 20px;
@@ -382,10 +422,14 @@ footer {
   font-weight: 500;
   line-height: 1.2;
   max-width: 40%;
+  -webkit-max-width: 40%;
   text-align: center;
   color: #303030;
   margin-right: 10%;
   margin-left: 5%;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  flex-shrink: 0;
 }
 .sec-image {
   width: 100%;
@@ -399,6 +443,10 @@ footer {
   border-radius: 20px;
   -webkit-mask-image: radial-gradient(rgb(51, 0, 80) 20%, transparent 75%);
   mask-image: radial-gradient(rgb(51, 0, 80) 20%, transparent 75%);
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  flex-shrink: 0; /* Добавлено */
+  flex-basis: 40%;
 }
 
 /* SWIPER */
@@ -446,6 +494,7 @@ footer {
   display: flex;
   align-items: start;
   justify-content: start;
+  -webkit-justify-content: start; 
   padding: 3%;
   color: #ffffff;
   z-index: 2;
@@ -482,6 +531,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
   align-items: center;
 }
 .third-text {
@@ -527,11 +578,14 @@ footer {
   flex-direction: column;
   align-items: start;
   justify-content: end;
+  -webkit-justify-content: end;
+  -webkit-box-pack: end;
   color: #ffffff;
   z-index: 2;
   border-radius: 0 0 50px 50px;
   transition: all 0.8s ease-out;
   padding: 3%;
+  margin-top: auto;
 }
 .fourth-text-overlay.expanded {
   height: 100%;
@@ -777,6 +831,7 @@ footer {
   }
   /* .contacts-media {
     justify-content: space-between;
+    -webkit-justify-content: space-between; 
   } */
   .why-wrapper {
     margin-bottom: 30px;
@@ -887,6 +942,8 @@ footer {
   }
   .contacts-block {
     gap: 10px;
+    gap: var(--gap-size, 10px);
+    gap: -webkit-var(--gap-size, 10px);
   }
   .call-us-btn {
     border-radius: 20px;
