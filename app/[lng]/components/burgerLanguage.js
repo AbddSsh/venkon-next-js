@@ -6,36 +6,26 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Language = ({ lng }) => {
+const BurgerLanguage = ({ lng }) => {
   const [showLang, setShowLang] = useState(false);
   const pathname = usePathname();
   const segments = pathname.split("/");
   const path =
     segments.length > 2 ? `/${segments[segments.length - 1]}` : false;
-  const handleLang = () => {
-    setShowLang(!showLang);
-  };
 
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (!event.target.closest(".lang__block")) {
-        setShowLang(false);
-      }
-    };
-
-    document.addEventListener("click", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, []);
   return (
-    <div onClick={handleLang} className="lang__block">
-      <span>{lng.toUpperCase()}</span>
-      <IoIosArrowDown style={{ marginLeft: "5px" }} />
-      <div className="lang" style={{ display: !showLang && "none" }}>
+    <div className="burger-lang__block">
+      <div className="burger-lang">
         {languages.map((lang) => (
-          <div key={lang} className="lang__item">
+          <div
+            key={lang}
+            className="burger-lang__item"
+            style={{
+              border: `0.5px solid ${
+                lng === lang ? "rgba(68, 180, 255, 1)" : "rgba(30,30,30,0.3)"
+              }`,
+            }}
+          >
             <Link
               href={path ? `/${lang + path}` : `/${lang}`}
               className="languages"
@@ -52,4 +42,4 @@ const Language = ({ lng }) => {
   );
 };
 
-export default Language;
+export default BurgerLanguage;

@@ -2,31 +2,11 @@ import { BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { BiPhoneCall } from "react-icons/bi";
 import EmailModal from "./emailModal";
+import { InstagramIcon } from "./icons/instagramIcon";
 
 export default function ContactsBlock({ handleContact, lng }) {
   return (
     <div className="contacts-block">
-      <div style={{ textAlign: "center" }}>
-        <a href="https://t.me/example" target="_blank">
-          <BsTelegram
-            style={{
-              fontSize: "32px",
-              marginRight: "15px",
-              color: "#0088cc",
-              cursor: "pointer",
-            }}
-          />
-        </a>
-        <a href="https://instagram.com" target="_blank">
-          <RiInstagramFill
-            style={{
-              fontSize: "36px",
-              color: "#e4405f",
-              cursor: "pointer",
-            }}
-          />
-        </a>
-      </div>
       <div>
         <a
           className="call-us-btn"
@@ -46,6 +26,21 @@ export default function ContactsBlock({ handleContact, lng }) {
         </a>
       </div>
       <EmailModal lng={lng} onClick={handleContact} />
+      <div className="contacts-media">
+        <a href="https://t.me/example" target="_blank">
+          <BsTelegram
+            style={{
+              fontSize: "32px",
+              marginRight: "15px",
+              color: "#0088cc",
+              cursor: "pointer",
+            }}
+          />
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <InstagramIcon />
+        </a>
+      </div>
     </div>
   );
 }

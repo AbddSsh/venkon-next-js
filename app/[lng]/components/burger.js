@@ -5,6 +5,7 @@ import ContactsBlock from "./contactsBlock";
 import Language from "./language";
 import WhyWe from "./whywe";
 import { GrClose } from "react-icons/gr";
+import BurgerLanguage from "./burgerLanguage";
 
 const Burger = ({ lng = { lng } }) => {
   const [showBurger, setShowBurger] = useState(false);
@@ -30,20 +31,30 @@ const Burger = ({ lng = { lng } }) => {
         </div>
         <div className={showBurger ? "burger-body active" : "burger-body"}>
           <div
+            className="burger-wrapper"
             style={{
-              position: "relative",
-              alignSelf: "end",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "20px",
             }}
           >
-            <GrClose className="burger-hide-btn" onClick={handleBurger} />
+            <div
+              style={{
+                position: "relative",
+                alignSelf: "end",
+              }}
+            >
+              <GrClose className="burger-hide-btn" onClick={handleBurger} />
+            </div>
+            <div className="burger-language">
+              <BurgerLanguage lng={lng} />
+            </div>
+            <div onClick={handleBurger} className="whywe__block">
+              <WhyWe lng={lng} />
+            </div>
+            <ContactsBlock lng={lng} handleBurger={handleBurger} />
           </div>
-          <div style={{ alignSelf: "end", marginTop: "-10px" }}>
-            <Language lng={lng} />
-          </div>
-          <div onClick={handleBurger}>
-            <WhyWe lng={lng} />
-          </div>
-          <ContactsBlock lng={lng} />
         </div>
       </div>
     </div>

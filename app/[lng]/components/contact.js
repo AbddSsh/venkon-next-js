@@ -56,7 +56,7 @@ function Contact({ lng }) {
               <div
                 style={{
                   whiteSpace: "nowrap",
-                  textAlign: "center",
+                  textAlign: "start",
                 }}
               >
                 {lng === "ru"
