@@ -391,6 +391,15 @@ footer {
   -webkit-justify-content: center;
   -webkit-box-pack: center;
 }
+@media not all and (min-resolution: 0.001dpcm) {
+  /* проверяем, что не Chrome */
+  @supports (-webkit-appearance: none) {
+    /* проверяем, что Safari */
+    .sec-wrapper {
+      margin: 0 10%;
+    }
+  }
+}
 .sec-img-wrap {
   position: relative;
   max-width: 100%;
