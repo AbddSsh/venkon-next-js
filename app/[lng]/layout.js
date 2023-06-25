@@ -1,6 +1,6 @@
-import { TheHeader } from "@/app/[lng]/components/header";
+import { TheHeader } from "@/app/components/header/header";
 import "../global.css";
-import { TheFooter } from "@/app/[lng]/components/footer";
+import { TheFooter } from "@/app/components/footer";
 import { dir } from "i18next";
 import Head from "next/head";
 import { languages } from "../i18n/settings";

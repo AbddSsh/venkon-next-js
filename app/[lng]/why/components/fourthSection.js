@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import styles from "../styles/FourthSection.module.css";
+import titleStyle from "../styles/SecondSection.module.css";
 
 export default function FourthSection({ section, lng }) {
   const [expandedBlocks, setExpandedBlocks] = useState(
@@ -18,28 +20,32 @@ export default function FourthSection({ section, lng }) {
   };
   return (
     <div className="why-wrapper">
-      <div className="why-sec-title">
+      <div className={titleStyle.why_sec_title}>
         {lng === "ru"
           ? "Среди наших проектов:"
           : lng === "en"
           ? "Among our projects:"
           : "Loyihalar orasida:"}
       </div>
-      <div className="fourth-projects">
+      <div className={styles.fourth_projects}>
         {section.blocks.map((block, index) => (
-          <div key={block.id} className="fourth-img-wrap">
+          <div key={block.id} className={styles.fourth_img_wrap}>
             <div
-              className={`fourth-text-overlay ${
-                expandedBlocks[index] ? "expanded" : ""
+              className={`${styles.fourth_text_overlay} ${
+                expandedBlocks[index] ? styles.expanded : ""
               }`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
             >
-              <div className="fourth-text-title">{block.texts[0].text}</div>
-              <div className="fourth-text-text">{block.texts[1].text}</div>
+              <div className={styles.fourth_text_title}>
+                {block.texts[0].text}
+              </div>
+              <div className={styles.fourth_text_text}>
+                {block.texts[1].text}
+              </div>
             </div>
             <img
-              className="fourth-image"
+              className={styles.fourth_image}
               src={block.files[0].url}
               alt={block.files[0].alts.text}
             />

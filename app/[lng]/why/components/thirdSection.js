@@ -1,15 +1,19 @@
+import styles from "../styles/ThirdSection.module.css";
+
 export default function ThirdSection({ section, lng }) {
   return (
     <div className="why-wrapper">
-      <div className="third-wrapper">
-        <div className="third-img-wrap">
+      <div className={styles.third_wrapper}>
+        <div className={styles.third_img_wrap}>
           <img
-            className="third-image"
+            className={styles.third_image}
             src={section.blocks[0].files[0].url}
             alt={section.blocks[0].files[0].alts.text}
           />
         </div>
-        <div className="third-text">{section.blocks[0].texts[0].text}</div>
+        <div className={styles.third_text}>
+          {section.blocks[0].texts[0].text}
+        </div>
       </div>
     </div>
   );

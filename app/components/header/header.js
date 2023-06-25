@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Contact from "./contact";
 import Language from "./language";
-import Burger from "./burger";
+import Burger from "./burger/burger";
 import WhyWe from "./whywe";
 import Image from "next/image";
 

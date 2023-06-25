@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ContactsBlock from "./contactsBlock";
-import Language from "./language";
-import WhyWe from "./whywe";
+import ContactsBlock from "../contactsBlock";
+import Language from "../language";
+import WhyWe from "../whywe";
 import { GrClose } from "react-icons/gr";
 import BurgerLanguage from "./burgerLanguage";
 

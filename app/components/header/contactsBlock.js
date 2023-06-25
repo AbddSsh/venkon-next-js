@@ -2,7 +2,7 @@ import { BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { BiPhoneCall } from "react-icons/bi";
 import EmailModal from "./emailModal";
-import { InstagramIcon } from "./icons/instagramIcon";
+import { InstagramIcon } from "../icons/instagramIcon";
 
 export default function ContactsBlock({ handleContact, lng }) {
   return (
