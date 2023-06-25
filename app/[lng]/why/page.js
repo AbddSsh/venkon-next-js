@@ -1,8 +1,8 @@
 import { getSecondWhyWeData, getWhyWeData } from "@/services/getData";
-import FirstSection from "./components/FirstSection";
-import SecondSection from "./components/SecondSection";
-import FourthSection from "./components/FourthSection";
-import ThirdSection from "./components/ThirdSection";
+import FirstSection from "./components/firstSection";
+import SecondSection from "./components/secondSection";
+import FourthSection from "./components/fourthSection";
+import ThirdSection from "./components/thirdSection";
 
 export async function generateMetadata({ params: { lng } }) {
   const pageId = 3;
