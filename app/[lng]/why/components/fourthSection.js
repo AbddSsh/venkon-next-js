@@ -37,7 +37,6 @@ export default function FourthSection({ section, lng }) {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
 onTouchStart={() => handleMouseEnter(index)}
-              onTouchEnd={() => handleMouseLeave(index)}
             >
               <div className={styles.fourth_text_title}>
                 {block.texts[0].text}
