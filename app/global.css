@@ -219,6 +219,7 @@ footer {
 .burger-lang {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 .burger-lang__item {
   font-weight: 700;
