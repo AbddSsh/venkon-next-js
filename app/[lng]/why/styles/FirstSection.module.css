@@ -117,16 +117,16 @@
 }
 @media (max-width: 576px) {
   .why_cover_title {
-    font-size: 16px;
+    font-size: 20px;
     left: 3%;
+    max-width: 60%;
   }
   .why_cover_text {
-    font-size: 8px;
+    font-size: 12px;
     left: 3%;
   }
   .cover_overlay {
     border-radius: 15px;
-    top: -0.5px;
   }
   .cover_image {
     border-radius: 15px;
@@ -134,10 +134,11 @@
 }
 @media (max-width: 367px) {
   .why_cover_title {
-    font-size: 12px;
+    font-size: 16px;
+    max-width: 60%;
   }
   .why_cover_text {
-    font-size: 6px;
+    font-size: 10px;
   }
   .cover_overlay {
     border-radius: 10px;

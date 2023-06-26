@@ -344,7 +344,7 @@ footer {
     padding: 20px 50px;
   }
   .why-wrapper {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 }
 @media (max-width: 1199px) {
@@ -352,7 +352,7 @@ footer {
     padding: 10px 30px;
   }
   .why-wrapper {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
@@ -378,7 +378,7 @@ footer {
     margin-bottom: 10px;
   }
   .why-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
@@ -406,7 +406,7 @@ footer {
     -webkit-justify-content: space-between; 
   } */
   .why-wrapper {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   .whywe-desktop {
     display: none;
@@ -437,7 +437,7 @@ footer {
   .burger-lang__item {
     padding: 7px 15px;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 10px;
   }
   .contact-wrapper {
     max-width: 200px;
@@ -448,7 +448,7 @@ footer {
   }
   .contact-us-btn {
     padding: 10px 15px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .contact-title {
     font-size: 12px;
@@ -459,7 +459,7 @@ footer {
   .call-us-btn {
     border-radius: 20px;
     padding: 7px 15px;
-    font-size: 10px;
+    font-size: 12px;
   }
   footer {
     font-size: 10px;
@@ -476,10 +476,10 @@ footer {
   .email-btn {
     border-radius: 20px;
     padding: 4px 15px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .why-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
@@ -508,9 +508,6 @@ footer {
     width: 100%;
     font-size: 10px;
   }
-  .contact-us-btn {
-    padding: 5px 10px;
-  }
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.5em !important;
@@ -518,7 +515,6 @@ footer {
     margin-left: 80%;
     margin-right: 0%;
   }
-
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.5em !important;

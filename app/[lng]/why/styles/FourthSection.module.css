@@ -69,7 +69,7 @@
     margin-bottom: 10px;
   }
   .fourth_text_text {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 @media (max-width: 1199px) {
@@ -79,11 +79,11 @@
   .fourth_text_overlay.expanded {
     border-radius: 30px;
   }
-  .fourth-text-title {
-    font-size: 32px;
+  .fourth_text_title {
+    font-size: 28px;
   }
   .fourth_text_text {
-    font-size: 16px;
+    font-size: 20px;
   }
   .fourth_image {
     border-radius: 30px;
@@ -103,7 +103,7 @@
     font-size: 24px;
   }
   .fourth-text-text {
-    font-size: 14px;
+    font-size: 18px;
   }
   .fourth_image {
     border-radius: 25px;
@@ -122,11 +122,11 @@
     border-radius: 20px;
   }
   .fourth_text_title {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
   .fourth_text_text {
-    font-size: 12px;
+    font-size: 16px;
   }
   .fourth_image {
     border-radius: 20px;
@@ -144,12 +144,12 @@
     border-radius: 10px;
   }
   .fourth_text_title {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 5px;
     line-height: 1.2;
   }
   .fourth_text_text {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.2;
   }
   .fourth_image {
@@ -164,12 +164,12 @@
     border-radius: 5px;
   }
   .fourth_text_title {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 5px;
     line-height: 1;
   }
   .fourth_text_text {
-    font-size: 8px;
+    font-size: 10px;
   }
   .fourth_image {
     border-radius: 5px;

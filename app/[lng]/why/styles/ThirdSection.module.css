@@ -102,7 +102,7 @@
     border-radius: 30px;
   } */
   .third_text {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 @media (max-width: 991px) {
@@ -113,7 +113,7 @@
     border-radius: 25px;
   } */
   .third_text {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 @media (min-width: 769px) {
@@ -126,7 +126,7 @@
     border-radius: 20px;
   } */
   .third_text {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
 @media (max-width: 576px) {
@@ -137,7 +137,7 @@
     border-radius: 15px;
   } */
   .third_text {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 @media (max-width: 367px) {
@@ -148,6 +148,6 @@
     border-radius: 10px;
   } */
   .third_text {
-    font-size: 8px;
+    font-size: 12px;
   }
 }

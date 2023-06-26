@@ -2,7 +2,7 @@
   font-size: 48px;
   font-weight: 500;
   text-align: start;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }
 .sec_wrapper {
   display: flex;
@@ -16,7 +16,7 @@
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
     .sec_wrapper {
-      margin: 0 10%;
+      margin: 0 7%;
     }
   }
 }
@@ -83,13 +83,18 @@
 @media (max-width: 1999px) {
 }
 @media (max-width: 1599px) {
+  .why_sec_title {
+    font-size: 38px;
+    margin: 60;
+  }
   .sec_text {
-    font-size: 26px;
+    font-size: 30px;
   }
 }
 @media (max-width: 1199px) {
   .why_sec_title {
     font-size: 38px;
+    margin: 50;
   }
   .sec_overlay {
     background: linear-gradient(
@@ -103,13 +108,13 @@
     border-radius: 15px;
   }
   .sec_text {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 @media (max-width: 991px) {
   .why_sec_title {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .sec_img_wrap {
     margin: 0px 5px;
@@ -127,15 +132,15 @@
     border-radius: 15px;
   }
   .sec_text {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 @media (min-width: 769px) {
 }
 @media (max-width: 768px) {
   .why_sec_title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 30px;
   }
   .sec_overlay {
     /* padding: 20px 20px; */
@@ -145,13 +150,13 @@
     border-radius: 10px;
   }
   .sec_text {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 @media (max-width: 576px) {
   .why_sec_title {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 20px;
   }
   .sec_img_wrap {
     margin: 0px 3px;
@@ -168,11 +173,10 @@
 }
 @media (max-width: 367px) {
   .why_sec_title {
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 18px;
   }
   .sec_text {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1;
   }
 }
