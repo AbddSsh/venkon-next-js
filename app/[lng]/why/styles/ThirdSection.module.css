@@ -136,8 +136,26 @@
   .third-text-overlay {
     border-radius: 15px;
   } */
+  .third_wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    align-items: center;
+  }
+  .third_img_wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .third_image {
+    width: 100%;
+  }
   .third_text {
-    font-size: 14px;
+    font-size: 18px;
+    margin: 0px 0px -15% 0px;
   }
 }
 @media (max-width: 367px) {
