@@ -30,15 +30,7 @@ const Burger = ({ lng = { lng } }) => {
           <span />
         </div>
         <div className={showBurger ? "burger-body active" : "burger-body"}>
-          <div
-            className="burger-wrapper"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: "20px",
-            }}
-          >
+          <div className="burger-wrapper">
             <div
               style={{
                 position: "relative",

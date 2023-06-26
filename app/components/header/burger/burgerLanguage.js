@@ -24,6 +24,7 @@ const BurgerLanguage = ({ lng }) => {
               border: `0.5px solid ${
                 lng === lang ? "rgba(68, 180, 255, 1)" : "rgba(30,30,30,0.3)"
               }`,
+              marginLeft: lang === "ru" && "0px",
             }}
           >
             <Link

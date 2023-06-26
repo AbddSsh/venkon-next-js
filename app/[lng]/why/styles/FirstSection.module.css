@@ -112,6 +112,7 @@
   }
   .cover_image {
     border-radius: 20px;
+    max-height: 40vw;
   }
 }
 @media (max-width: 576px) {

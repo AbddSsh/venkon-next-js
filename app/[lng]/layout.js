@@ -5,10 +5,11 @@ import { dir } from "i18next";
 import Head from "next/head";
 import { languages } from "../i18n/settings";
 import "bootstrap/dist/css/bootstrap.css";
+import { Montserrat } from "next/font/google";
 
-// const montserrat = Montserrat({
-//   subsets: ["cyrillic", "latin"],
-// });
+const montserrat = Montserrat({
+  subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+});
 
 export const metadata = {
   title: "Venkon Com.",
@@ -31,17 +32,15 @@ export default function RootLayout({ children, params: { lng } }) {
             integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
             crossOrigin="anonymous"
           /> */}
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
-          />
+          /> */}
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <body
-        // className={montserrat.className}
-        >
+        <body>
           <div className="wrapper">
             <TheHeader lng={lng} />
             <main className="my-container">{children}</main>

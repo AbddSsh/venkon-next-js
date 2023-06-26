@@ -19,9 +19,11 @@ export default function ContactsBlock({ handleContact, lng }) {
             ? "Call us"
             : "Bizga qo'ngíroq qiling"}
           {lng === "ru" ? (
-            <BiPhoneCall size={20} />
+            <BiPhoneCall size={20} style={{ marginLeft: "5px" }} />
           ) : (
-            lng === "en" && <BiPhoneCall size={20} />
+            lng === "en" && (
+              <BiPhoneCall size={20} style={{ marginLeft: "5px" }} />
+            )
           )}
         </a>
       </div>
@@ -31,7 +33,7 @@ export default function ContactsBlock({ handleContact, lng }) {
           <BsTelegram
             style={{
               fontSize: "32px",
-              marginRight: "15px",
+              marginRight: "25px",
               color: "#0088cc",
               cursor: "pointer",
             }}

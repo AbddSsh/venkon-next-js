@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Helvetica";
 }
 html,
 body {
@@ -92,15 +94,12 @@ footer {
   margin-bottom: 20px;
 }
 .whywe__block {
-  margin: 10px 0;
+  margin: 15% 0;
 }
 .contacts-block {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  gap: var(--gap-size, 15px);
-  gap: -webkit-var(--gap-size, 15px);
 }
 .contacts-media {
   display: -webkit-flex;
@@ -110,12 +109,6 @@ footer {
   -webkit-justify-content: center;
   -webkit-box-pack: center;
   justify-content: center;
-  gap: 10px;
-  -webkit-gap: 10px;
-  gap: var(--gap-size, 10px);
-  -webkit-gap: var(--gap-size, 10px);
-  gap: -webkit-var(--gap-size, 10px);
-  -webkit-gap: -webkit-var(--gap-size, 10px);
 }
 
 .call-us-btn {
@@ -128,13 +121,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-justify-content: center;
-  -webkit-box-pack: center;
-  gap: 5px;
-  gap: var(--gap-size, 5px);
-  gap: -webkit-var(--gap-size, 5px);
   font-weight: 600;
   color: #ffffff;
+  margin-bottom: 15px;
 }
 .send-message-btn {
   border-radius: 20px;
@@ -156,13 +145,11 @@ footer {
   -webkit-justify-content: center;
   -webkit-box-pack: center;
   align-items: center;
-  gap: 5px;
-  gap: var(--gap-size, 5px);
-  gap: -webkit-var(--gap-size, 5px);
   white-space: nowrap;
   text-align: center;
   border: 0.5px solid rgba(70, 59, 144, 0.5);
   background: #ffffff;
+  margin-bottom: 15px;
 }
 .form-input {
   width: 80%;
@@ -188,6 +175,7 @@ footer {
   color: #303030;
   font-weight: 600;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 .lang__block {
   border-radius: 30px;
@@ -231,11 +219,6 @@ footer {
 .burger-lang {
   display: flex;
   align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
-  gap: 10px;
-  gap: var(--gap-size, 10px);
-  gap: -webkit-var(--gap-size, 10px);
 }
 .burger-lang__item {
   font-weight: 700;
@@ -243,6 +226,7 @@ footer {
   cursor: pointer;
   border-radius: 20px;
   font-size: 12px;
+  margin: 0 5px 0 5px;
 }
 .burger {
   display: flex;
@@ -251,7 +235,7 @@ footer {
 .burger-btn {
   width: 20px;
   height: 15px;
-  margin-left: 20px;
+  margin-right: 10px;
   position: relative;
   display: flex;
   align-items: center;
@@ -297,9 +281,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  gap: var(--gap-size, 15px);
-  gap: -webkit-var(--gap-size, 15px);
   z-index: 101;
 }
 .burger-body.active {
@@ -389,6 +370,12 @@ footer {
   .my-container {
     padding: 10px 20px;
   }
+  .call-us-btn {
+    margin-bottom: 10px;
+  }
+  .email-btn {
+    margin-bottom: 10px;
+  }
   .why-wrapper {
     margin-bottom: 40px;
   }
@@ -396,7 +383,6 @@ footer {
   .swiper-container-rtl .swiper-button-prev:after {
     margin-right: 100%;
   }
-
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     margin-left: 100%;
@@ -468,9 +454,6 @@ footer {
     margin-bottom: 10px;
   }
   .contacts-block {
-    gap: 10px;
-    gap: var(--gap-size, 10px);
-    gap: -webkit-var(--gap-size, 10px);
   }
   .call-us-btn {
     border-radius: 20px;
@@ -484,7 +467,7 @@ footer {
     padding: 10px 8px;
   }
   .img-block {
-    max-width: 150px;
+    max-width: 120px;
   }
   .email {
     font-size: 12px;

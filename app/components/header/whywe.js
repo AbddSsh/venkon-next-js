@@ -12,7 +12,11 @@ export default function WhyWe({ lng }) {
           margin: "0px",
         }}
       >
-        {lng === "ru" ? "Почему мы?" : lng === "en" ? "Why us?" : "Nega biz?"}
+        {lng === "ru"
+          ? "Почему мы?"
+          : lng === "en"
+          ? "Why us?"
+          : "Nima ushun biz?"}
       </Link>
     </div>
   );

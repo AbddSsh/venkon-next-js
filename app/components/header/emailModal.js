@@ -25,7 +25,7 @@ const EmailModal = ({ lng }) => {
   return (
     <div className="email">
       <button className="email-btn" onClick={handleModal}>
-        Email <HiOutlineMail size={24} />
+        Email <HiOutlineMail size={24} style={{ marginLeft: "5px" }} />
       </button>
       <Modal show={showModal} onHide={handleModal}>
         <Modal.Header closeButton style={{ border: "none" }}>
@@ -43,7 +43,6 @@ const EmailModal = ({ lng }) => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "10px",
               }}
             >
               <label className="form-title">
