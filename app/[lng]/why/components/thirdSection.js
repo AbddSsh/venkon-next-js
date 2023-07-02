@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "../styles/ThirdSection.module.css";
 
 export default function ThirdSection({ section, lng }) {
@@ -5,10 +6,13 @@ export default function ThirdSection({ section, lng }) {
     <div className="why-wrapper">
       <div className={styles.third_wrapper}>
         <div className={styles.third_img_wrap}>
-          <img
+          <Image
             className={styles.third_image}
             src={section.blocks[0].files[0].url}
             alt={section.blocks[0].files[0].alts.text}
+            width={300}
+            height={150}
+            loading="lazy"
           />
         </div>
         <div className={styles.third_text}>

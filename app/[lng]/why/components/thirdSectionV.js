@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ThirdSectionV({ section, lng }) {
   return (
     <div className="why-wrapper">
@@ -6,10 +8,13 @@ export default function ThirdSectionV({ section, lng }) {
           <div className="third-text-overlay">
             <div className="third-text">{section.blocks[0].texts[0].text}</div>
           </div>
-          <img
+          <Image
             className="third-image"
             src={section.blocks[0].files[0].url}
             alt={section.blocks[0].files[0].alts.text}
+            width={300}
+            height={150}
+            loading="lazy"
           />
         </div>
       </div>

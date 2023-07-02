@@ -1,10 +1,8 @@
-import axios from "axios";
+import { $host } from "./index";
 
-const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-export const getSecondWhyWeData = async (id, lang) => {
-  const { data } = await axios.get(
-    `${baseUrl}/vencon/user/page?page_id=${id}&language=${lang}`
+export const getWhyWeData = async (id, lang) => {
+  const { data } = await $host.get(
+    `/vencon/user/page?page_id=${id}&language=${lang}`
   );
   return data;
 };

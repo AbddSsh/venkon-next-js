@@ -49,7 +49,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: 35vw;
+  height: 40vw;
   object-fit: cover;
   object-position: center;
   z-index: 1;
@@ -139,9 +139,11 @@
   }
   .fourth_text_overlay {
     border-radius: 0 0 10px 10px;
+    height: 45%;
   }
   .fourth_text_overlay.expanded {
     border-radius: 10px;
+    padding-top: 15%;
   }
   .fourth_text_title {
     font-size: 16px;
@@ -150,10 +152,11 @@
   }
   .fourth_text_text {
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.3;
   }
   .fourth_image {
     border-radius: 10px;
+    height: 100vw;
   }
 }
 @media (max-width: 367px) {
@@ -166,7 +169,6 @@
   .fourth_text_title {
     font-size: 12px;
     margin-bottom: 5px;
-    line-height: 1;
   }
   .fourth_text_text {
     font-size: 10px;

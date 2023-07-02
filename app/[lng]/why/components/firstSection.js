@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "../styles/FirstSection.module.css";
 
 export default function FirstSection({ section }) {
@@ -17,10 +18,13 @@ export default function FirstSection({ section }) {
                 </div>
               </div>
             </div>
-            <img
+            <Image
               className={styles.cover_image}
               src={block.files[0].url}
               alt={block.files[0].alts.text}
+              width={300}
+              height={150}
+              loading="lazy"
             />
           </div>
         </div>

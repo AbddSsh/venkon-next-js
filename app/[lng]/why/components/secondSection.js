@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
 import styles from "../styles/SecondSection.module.css";
+import Image from "next/image";
 
 export default function SecondSection({ section, lng }) {
   return (
@@ -50,10 +51,13 @@ export default function SecondSection({ section, lng }) {
             <div className={styles.sec_wrapper}>
               <div className={styles.sec_text}>{block.texts[0].text}</div>
               <div key={block.id} className={styles.sec_img_wrap}>
-                <img
+                <Image
                   className={styles.sec_image}
                   src={block.files[0].url}
                   alt={block.files[0].alts.text}
+                  width={300}
+                  height={150}
+                  loading="lazy"
                 />
               </div>
             </div>

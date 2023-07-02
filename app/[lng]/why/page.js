@@ -1,4 +1,4 @@
-import { getSecondWhyWeData, getWhyWeData } from "@/services/getData";
+import { getWhyWeData } from "@/services/getData";
 import FirstSection from "./components/firstSection";
 import SecondSection from "./components/secondSection";
 import FourthSection from "./components/fourthSection";
@@ -6,7 +6,7 @@ import ThirdSection from "./components/thirdSection";
 
 export async function generateMetadata({ params: { lng } }) {
   const pageId = 3;
-  const response = await getSecondWhyWeData(pageId, lng);
+  const response = await getWhyWeData(pageId, lng);
   return {
     title: response.seo_title,
     description: response.seo_description,
@@ -16,7 +16,7 @@ export async function generateMetadata({ params: { lng } }) {
 
 export default async function WhyWe({ params: { lng } }) {
   const pageId = 3;
-  const response = await getSecondWhyWeData(pageId, lng);
+  const response = await getWhyWeData(pageId, lng);
   return (
     <>
       <div>

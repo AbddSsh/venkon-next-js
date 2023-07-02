@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "../styles/FourthSection.module.css";
 import titleStyle from "../styles/SecondSection.module.css";
+import Image from "next/image";
 
 export default function FourthSection({ section, lng }) {
   const [expandedBlocks, setExpandedBlocks] = useState(
@@ -45,10 +46,13 @@ export default function FourthSection({ section, lng }) {
                 {block.texts[1].text}
               </div>
             </div>
-            <img
+            <Image
               className={styles.fourth_image}
               src={block.files[0].url}
               alt={block.files[0].alts.text}
+              width={300}
+              height={150}
+              loading="lazy"
             />
           </div>
         ))}
