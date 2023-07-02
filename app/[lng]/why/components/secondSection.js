@@ -57,7 +57,6 @@ export default function SecondSection({ section, lng }) {
                   alt={block.files[0].alts.text}
                   width={300}
                   height={150}
-                  loading="lazy"
                 />
               </div>
             </div>

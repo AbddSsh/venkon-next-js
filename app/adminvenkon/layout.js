@@ -1,27 +1,27 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
 export default function AdminLayout({ children }) {
-  const getInitialAuthValue = () => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("isAuth") || false;
-    }
-    return false;
-  };
-  const [isAuth, setIsAuth] = useState(getInitialAuthValue());
+  const [isAuth, setIsAuth] = useState(false);
+  useEffect(() => {
+    const storedIsAuth = localStorage.getItem("isAuth");
+    setIsAuth(storedIsAuth || false);
+  }, []);
   const handleIsAuth = (bool) => {
     setIsAuth(bool);
   };
   return (
-    <main>
-      <body>
-        <AuthContext.Provider value={{ isAuth, handleIsAuth }}>
-          {children}
-        </AuthContext.Provider>
-      </body>
-    </main>
+    <>
+      <html>
+        <body>
+          <AuthContext.Provider value={{ isAuth, handleIsAuth }}>
+            <main>{children}</main>
+          </AuthContext.Provider>
+        </body>
+      </html>
+    </>
   );
 }

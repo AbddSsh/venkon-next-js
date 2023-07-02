@@ -20,7 +20,7 @@ export default function WhyUsAdmin() {
       setData(results);
     };
     fetchData().then(console.log(data));
-  });
+  }, []);
 
   const router = useRouter();
 
@@ -28,7 +28,7 @@ export default function WhyUsAdmin() {
     if (!isAuth) {
       router.push("/");
     }
-  });
+  }, []);
 
   return <div>sdfsdfsdf</div>;
 }
