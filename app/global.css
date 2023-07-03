@@ -10,6 +10,12 @@ html,
 body {
   height: 100%;
 }
+header {
+  padding: 2% 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
 .wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -28,8 +34,9 @@ main {
 }
 .my-container {
   max-width: 100%;
-  padding: 10px 80px;
+  padding: 0px 80px;
 }
+
 .my-link {
   color: rgb(30, 30, 30);
   text-decoration: none;
@@ -331,17 +338,17 @@ footer {
 /* MEDIA */
 @media (min-width: 2000px) {
   .my-container {
-    padding: 20px 80px;
+    padding: 0px 80px;
   }
 }
 @media (max-width: 1999px) {
   .my-container {
-    padding: 20px 80px;
+    padding: 0px 80px;
   }
 }
 @media (max-width: 1599px) {
   .my-container {
-    padding: 20px 50px;
+    padding: 0px 50px;
   }
   .why-wrapper {
     margin-bottom: 80px;
@@ -349,7 +356,7 @@ footer {
 }
 @media (max-width: 1199px) {
   .my-container {
-    padding: 10px 30px;
+    padding: 0px 30px;
   }
   .why-wrapper {
     margin-bottom: 70px;
@@ -369,7 +376,7 @@ footer {
 }
 @media (max-width: 991px) {
   .my-container {
-    padding: 10px 20px;
+    padding: 0px 20px;
   }
   .call-us-btn {
     margin-bottom: 10px;
@@ -412,7 +419,7 @@ footer {
     display: none;
   }
   .my-container {
-    padding: 10px 15px;
+    padding: 0px 15px;
   }
   .swiper-button-next:after,
   .swiper-container-rtl .swiper-button-prev:after {
@@ -465,7 +472,7 @@ footer {
     font-size: 10px;
   }
   .my-container {
-    padding: 10px 8px;
+    padding: 0px 8px;
   }
   .img-block {
     max-width: 120px;

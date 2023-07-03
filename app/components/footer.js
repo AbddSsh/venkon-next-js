@@ -3,6 +3,7 @@ const TheFooter = ({ lng }) => {
     <footer
       style={{
         color: "#303030",
+        padding: "2% 0",
       }}
     >
       <div
