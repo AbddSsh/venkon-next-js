@@ -8,7 +8,7 @@ import { Navigation, Pagination } from "swiper";
 import styles from "../styles/SecondSection.module.css";
 import Image from "next/image";
 
-export default function SecondSection({ section, lng }) {
+export default function SecondSection({ section, lng, admin }) {
   return (
     <div className="why-wrapper">
       <div className={styles.why_sec_title}>
@@ -46,7 +46,7 @@ export default function SecondSection({ section, lng }) {
         navigation={true}
         modules={[Navigation]}
       >
-        {section.blocks.map((block, index) => (
+        {section?.blocks.map((block, index) => (
           <SwiperSlide key={index}>
             <div className={styles.sec_wrapper}>
               <div className={styles.sec_text}>{block.texts[0].text}</div>

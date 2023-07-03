@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useEffect, useState } from "react";
+import "../global.css";
 
 export const AuthContext = createContext();
 
@@ -16,9 +17,9 @@ export default function AdminLayout({ children }) {
   return (
     <>
       <html>
-        <body>
+        <body className="wrapper">
           <AuthContext.Provider value={{ isAuth, handleIsAuth }}>
-            <main>{children}</main>
+            <main className="my-container">{children}</main>
           </AuthContext.Provider>
         </body>
       </html>

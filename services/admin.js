@@ -20,9 +20,30 @@ export const Auth = async (username, password) => {
   }
 };
 
-export const getWhyusPageData = async (id, lang) => {
-  const { data } = await $host.get(
-    `/vencon/user/page?page_id=${id}&language=${lang}`
-  );
-  return data;
+export const putWhyusPageSeo = async (
+  pageId,
+  lng,
+  title,
+  description,
+  keywords
+) => {
+  try {
+    const { data } = await $authHost.put(`/vencon/admin/edit/seo`, {
+      page_id: pageId,
+      seo: [
+        {
+          language: lng,
+          title: title,
+          description: description,
+          keywords: keywords,
+        },
+      ],
+    });
+    alert(
+      `Данные успешно обновлены.Обновите страницу чтобы увидеть изменения.`
+    );
+    return data;
+  } catch (error) {
+    alert(`Ошибка... ${error}`);
+  }
 };

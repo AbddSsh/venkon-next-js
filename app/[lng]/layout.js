@@ -41,11 +41,11 @@ export default function RootLayout({ children, params: { lng } }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
-          <div className="wrapper">
+          <main className="wrapper">
             <TheHeader lng={lng} />
-            <main className="my-container">{children}</main>
+            <div className="my-container">{children}</div>
             <TheFooter lng={lng} />
-          </div>
+          </main>
         </body>
       </html>
     </>

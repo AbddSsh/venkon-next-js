@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from "../styles/FirstSection.module.css";
 
-export default function FirstSection({ section }) {
+export default function FirstSection({ section, isAdmin, pageId, lng }) {
   return (
     <div className="why-wrapper">
-      {section.blocks.map((block) => (
+      {section?.blocks.map((block) => (
         <div key={block.id}>
           <div className={styles.why_cover_img}>
             <div className={styles.cover_overlay}>

@@ -5,9 +5,9 @@ import styles from "../styles/FourthSection.module.css";
 import titleStyle from "../styles/SecondSection.module.css";
 import Image from "next/image";
 
-export default function FourthSection({ section, lng }) {
+export default function FourthSection({ section, lng, admin }) {
   const [expandedBlocks, setExpandedBlocks] = useState(
-    Array(section.blocks.length).fill(false)
+    Array(section?.blocks.length).fill(false)
   );
   const handleMouseEnter = (index) => {
     setExpandedBlocks((prevBlocks) =>
@@ -29,7 +29,7 @@ export default function FourthSection({ section, lng }) {
           : "Loyihalar orasida:"}
       </div>
       <div className={styles.fourth_projects}>
-        {section.blocks.map((block, index) => (
+        {section?.blocks.map((block, index) => (
           <div key={block.id} className={styles.fourth_img_wrap}>
             <div
               className={`${styles.fourth_text_overlay} ${
