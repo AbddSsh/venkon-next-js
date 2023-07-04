@@ -9,8 +9,8 @@
 .third_text {
   font-size: 40px;
   font-weight: 500;
-  min-width: 60%;
-  margin-bottom: 5%;
+  max-width: 60%;
+  /* margin-bottom: 5%; */
   text-align: center;
 }
 .third_img_wrap {
@@ -136,13 +136,16 @@
   .third-text-overlay {
     border-radius: 15px;
   } */
-  .third_wrapper {
+  /* .third_wrapper {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     -webkit-justify-content: center;
     -webkit-box-pack: center;
     align-items: center;
+  } */
+  .third_wrapper {
+    display: none;
   }
   .third_img_wrap {
     position: relative;
