@@ -4,8 +4,9 @@ import { useState } from "react";
 import styles from "../styles/FourthSection.module.css";
 import titleStyle from "../styles/SecondSection.module.css";
 import Image from "next/image";
+import ContentAdmin from "@/app/adminvenkon/components/contentAdmin";
 
-export default function FourthSection({ section, lng, admin }) {
+export default function FourthSection({ section, lng, pageId, isAdmin }) {
   const [expandedBlocks, setExpandedBlocks] = useState(
     Array(section?.blocks.length).fill(false)
   );
@@ -30,30 +31,35 @@ export default function FourthSection({ section, lng, admin }) {
       </div>
       <div className={styles.fourth_projects}>
         {section?.blocks.map((block, index) => (
-          <div key={block.id} className={styles.fourth_img_wrap}>
-            <div
-              className={`${styles.fourth_text_overlay} ${
-                expandedBlocks[index] ? styles.expanded : ""
-              }`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
-              onTouchStart={() => handleMouseEnter(index)}
-            >
-              <div className={styles.fourth_text_title}>
-                {block.texts[0].text}
+          <div>
+            <div key={block.id} className={styles.fourth_img_wrap}>
+              <div
+                className={`${styles.fourth_text_overlay} ${
+                  expandedBlocks[index] ? styles.expanded : ""
+                }`}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+                onTouchStart={() => handleMouseEnter(index)}
+              >
+                <div className={styles.fourth_text_title}>
+                  {block.texts[0].text}
+                </div>
+                <div className={styles.fourth_text_text}>
+                  {block.texts[1].text}
+                </div>
               </div>
-              <div className={styles.fourth_text_text}>
-                {block.texts[1].text}
-              </div>
+              <Image
+                className={styles.fourth_image}
+                src={block.files[0].url}
+                alt={block.files[0].alts.text}
+                width={300}
+                height={150}
+                loading="lazy"
+              />
             </div>
-            <Image
-              className={styles.fourth_image}
-              src={block.files[0].url}
-              alt={block.files[0].alts.text}
-              width={300}
-              height={150}
-              loading="lazy"
-            />
+            {isAdmin && (
+              <ContentAdmin block={block} pageId={pageId} lng={lng} />
+            )}
           </div>
         ))}
       </div>

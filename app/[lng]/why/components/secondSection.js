@@ -7,8 +7,9 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
 import styles from "../styles/SecondSection.module.css";
 import Image from "next/image";
+import ContentAdmin from "@/app/adminvenkon/components/contentAdmin";
 
-export default function SecondSection({ section, lng, admin }) {
+export default function SecondSection({ section, lng, pageId, isAdmin }) {
   return (
     <div className="why-wrapper">
       <div className={styles.why_sec_title}>
@@ -60,6 +61,9 @@ export default function SecondSection({ section, lng, admin }) {
                 />
               </div>
             </div>
+            {isAdmin && (
+              <ContentAdmin block={block} pageId={pageId} lng={lng} />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

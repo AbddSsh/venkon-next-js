@@ -10,7 +10,7 @@ export default function ContactsBlock({ handleContact, lng }) {
       <div>
         <a
           className="call-us-btn"
-          href="tel:+998901234567"
+          href="tel:+998907997979"
           style={{ color: "#fff", textDecoration: "none" }}
         >
           {lng === "ru"

@@ -81,57 +81,66 @@ export default function WhyUsAdmin() {
                 lng="en"
               />
             </div>
-            <div>
+            {/* <div>
               <SecondSection
                 section={data[0]?.ru?.sections[1]}
                 lng="ru"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
               <SecondSection
                 section={data[1]?.uz?.sections[1]}
                 lng="uz"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
               <SecondSection
                 section={data[2]?.en?.sections[1]}
                 lng="en"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
             </div>
             <div>
               <ThirdSection
                 section={data[0]?.ru?.sections[2]}
                 lng="ru"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
               <ThirdSection
                 section={data[1]?.uz?.sections[2]}
                 lng="uz"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
               <ThirdSection
                 section={data[2]?.en?.sections[2]}
                 lng="en"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
             </div>
             <div>
               <FourthSection
                 section={data[0]?.ru?.sections[3]}
                 lng="ru"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
               <FourthSection
                 section={data[1]?.uz?.sections[3]}
                 lng="uz"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
               <FourthSection
                 section={data[2]?.en?.sections[3]}
                 lng="en"
-                admin={isAuth}
+                isAdmin={isAuth}
+                pageId={pageId}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       )}

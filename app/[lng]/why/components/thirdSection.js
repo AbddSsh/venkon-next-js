@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styles from "../styles/ThirdSection.module.css";
+import ContentAdmin from "@/app/adminvenkon/components/contentAdmin";
 
-export default function ThirdSection({ section, lng, admin }) {
+export default function ThirdSection({ section, lng, pageId, isAdmin }) {
   return (
     <div className="why-wrapper">
       <div className={styles.third_wrapper}>
@@ -19,6 +20,13 @@ export default function ThirdSection({ section, lng, admin }) {
           {section?.blocks[0].texts[0].text}
         </div>
       </div>
+      {isAdmin && (
+        <div>
+          {section?.blocks.map((block) => (
+            <ContentAdmin block={block} pageId={pageId} lng={lng} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

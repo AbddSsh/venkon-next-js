@@ -58,9 +58,32 @@ export default function AuthAdmin() {
           </form>
         </div>
       ) : (
-        <div>
-          <Link href="/adminvenkon/adminwhy">Why us page</Link>
-          <Link href="/adminvenkon/adminhome">Home page</Link>
+        <div
+          style={{
+            margin: "50px auto",
+            fontSize: "16px",
+            padding: "10%",
+            boxShadow: "0px 4px 20px #999999",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Link
+            href="/adminvenkon/adminhome"
+            className="my-link"
+            style={{ margin: "10px" }}
+          >
+            Home page
+          </Link>
+          <Link
+            href="/adminvenkon/adminwhy"
+            className="my-link"
+            style={{ margin: "10px" }}
+          >
+            Why us page
+          </Link>
         </div>
       )}
     </div>

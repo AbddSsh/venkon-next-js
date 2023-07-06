@@ -1,6 +1,6 @@
 "use client";
 
-import { putWhyusPageSeo } from "@/services/admin";
+import { putPageSeo } from "@/services/admin";
 import { useState } from "react";
 
 export default function SeoAdmin({ seo, lng, pageId }) {
@@ -21,7 +21,7 @@ export default function SeoAdmin({ seo, lng, pageId }) {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    putWhyusPageSeo(pageId, lng, title, description, keywords);
+    putPageSeo(pageId, lng, title, description, keywords);
     setIsChange(false);
   };
   return (

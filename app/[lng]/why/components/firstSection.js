@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/FirstSection.module.css";
+import ContentAdmin from "@/app/adminvenkon/components/contentAdmin";
 
 export default function FirstSection({ section, isAdmin, pageId, lng }) {
   return (
@@ -29,6 +30,18 @@ export default function FirstSection({ section, isAdmin, pageId, lng }) {
           </div>
         </div>
       ))}
+      {isAdmin && (
+        <div>
+          {section?.blocks.map((block) => (
+            <ContentAdmin
+              key={block.id}
+              block={block}
+              pageId={pageId}
+              lng={lng}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
