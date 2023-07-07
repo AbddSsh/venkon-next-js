@@ -43,9 +43,15 @@ export const putPageSeo = async (pageId, lng, title, description, keywords) => {
   }
 };
 
-export const putContentText = async (text) => {
+export const putContentText = async (id, text) => {
   try {
-    const { data } = await $authHost.put("/vencon/admin/edit/text", text);
+    const { data } = await $authHost.put("/vencon/admin/edit/text", {
+      text_id: id,
+      text: text,
+    });
+    alert(
+      `Данные успешно обновлены.Обновите страницу чтобы увидеть изменения.`
+    );
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);
@@ -54,9 +60,13 @@ export const putContentText = async (text) => {
 
 export const putContentFile = async (id, formData) => {
   try {
-    const { data } = await $authHost.put(`/vencon/admin/edit/file?file=${id}`, {
-      formData,
-    });
+    const { data } = await $authHost.put(
+      `/vencon/admin/edit/file?file_id=${id}`,
+      formData
+    );
+    alert(
+      `Данные успешно обновлены.Обновите страницу чтобы увидеть изменения.`
+    );
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);
@@ -74,6 +84,9 @@ export const putContentAlt = async (fileId, text, lng) => {
         },
       ],
     });
+    alert(
+      `Данные успешно обновлены.Обновите страницу чтобы увидеть изменения.`
+    );
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);

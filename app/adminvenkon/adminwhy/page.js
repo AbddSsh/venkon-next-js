@@ -81,7 +81,7 @@ export default function WhyUsAdmin() {
                 lng="en"
               />
             </div>
-            {/* <div>
+            <div>
               <SecondSection
                 section={data[0]?.ru?.sections[1]}
                 lng="ru"
@@ -140,7 +140,7 @@ export default function WhyUsAdmin() {
                 isAdmin={isAuth}
                 pageId={pageId}
               />
-            </div> */}
+            </div>
           </div>
         </div>
       )}

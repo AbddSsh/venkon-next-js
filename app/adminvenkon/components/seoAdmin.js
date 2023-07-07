@@ -142,7 +142,9 @@ export default function SeoAdmin({ seo, lng, pageId }) {
               {seo?.seo_keywords}
             </div>
           </div>
-          <button onClick={() => setIsChange(true)}>Изменить</button>
+          <div>
+            <button onClick={() => setIsChange(true)}>Изменить</button>
+          </div>
         </div>
       )}
     </div>

@@ -57,9 +57,11 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
                 loading="lazy"
               />
             </div>
-            {isAdmin && (
-              <ContentAdmin block={block} pageId={pageId} lng={lng} />
-            )}
+            <div style={{ marginBottom: "20px", marginTop: "-5px" }}>
+              {isAdmin && (
+                <ContentAdmin block={block} pageId={pageId} lng={lng} />
+              )}
+            </div>
           </div>
         ))}
       </div>

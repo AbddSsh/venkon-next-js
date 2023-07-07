@@ -13,14 +13,6 @@ export default function ContentAdmin({ block, pageId, lng }) {
   const [altStates, setAltStates] = useState([]);
   const [textStates, setTextStates] = useState([]);
   console.log(block);
-
-  const updateFileStateById = (id, newFile) => {
-    setAltStates((prevAltStates) =>
-      prevAltStates.map((fileState) =>
-        fileState.id === id ? { ...fileState, url: newFile } : fileState
-      )
-    );
-  };
   const updateTextStateById = (id, newText) => {
     setTextStates((prevTextStates) =>
       prevTextStates.map((textState) =>
@@ -39,15 +31,8 @@ export default function ContentAdmin({ block, pageId, lng }) {
   const formData = new FormData();
 
   const handleChangeFile = (event, id) => {
-    // const newFile = event.target.files[0];
-    // setFileStates({file_id: id, file: newFile})
-    // updateFileStateById(id, newFile);
-
     const formData = new FormData();
-    // formData.append("filename", event.target.files[0].name);
-    // formData.append("file", event.target.files[0]);
-    // formData.append("file_id", id);
-    formData.append("file", event.target.files[0], event.target.files[0].name);
+    formData.append("file", event.target.files[0]);
     setFileStates({ fileId: id, formData: formData });
   };
   const handleChangeText = (index, event) => {
@@ -63,19 +48,11 @@ export default function ContentAdmin({ block, pageId, lng }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // const formData = new FormData();
-    // formData.append("file_id", altStates[0].fileId);
-    // formData.append("file", altStates[0].url);
     putContentFile(fileStates.fileId, fileStates.formData);
-
-    // putContentAlt(altStates[0].fileId, altStates[0].text, lng);
-    // putContentText(
-    //   textStates.map((text) => ({
-    //     text_id: text.id,
-    //     text: text,
-    //   }))
-    // );
+    putContentAlt(altStates[0].fileId, altStates[0].text, lng);
+    textStates.map((text) => {
+      putContentText(text.id, text.text);
+    });
   };
   useEffect(() => {
     if (block) {
@@ -86,7 +63,6 @@ export default function ContentAdmin({ block, pageId, lng }) {
       setTextStates(initialTextStates);
       const initialAltStates = block.files.map((file) => ({
         fileId: file.id,
-        url: file.url,
         altId: file.alts[0].id,
         text: file.alts[0].text,
       }));
