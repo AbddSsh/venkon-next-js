@@ -31,8 +31,8 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
       </div>
       <div className={styles.fourth_projects}>
         {section?.blocks.map((block, index) => (
-          <div>
-            <div key={block.id} className={styles.fourth_img_wrap}>
+          <div key={block.id}>
+            <div className={styles.fourth_img_wrap}>
               <div
                 className={`${styles.fourth_text_overlay} ${
                   expandedBlocks[index] ? styles.expanded : ""

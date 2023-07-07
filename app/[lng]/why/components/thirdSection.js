@@ -23,7 +23,12 @@ export default function ThirdSection({ section, lng, pageId, isAdmin }) {
       {isAdmin && (
         <div>
           {section?.blocks.map((block) => (
-            <ContentAdmin block={block} pageId={pageId} lng={lng} />
+            <ContentAdmin
+              key={block.id}
+              block={block}
+              pageId={pageId}
+              lng={lng}
+            />
           ))}
         </div>
       )}
