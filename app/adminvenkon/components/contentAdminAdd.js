@@ -49,31 +49,26 @@ export default function ContentAdminAdd({ block, sectionId }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // if (fileStates) {
-    //   putContentFile(fileStates.fileId, fileStates.formData);
-    // }
-    // putContentAlt(altStates[0].fileId, altStates[0].text, lng);
-    // textStates.map((text) => {
-    //   putContentText(text.id, text.text);
-    // });
-    addBlock(
-      sectionId,
-      addedTextStates[0].ru.text,
-      addedTextStates[0].uz.text,
-      addedTextStates[0].en.text
-    ).then((data) => {
-      addFile(data.block_id, addedFile.formData).then((data) =>
-        addAlt(
-          data.file_id,
-          addedAltStates[0].ru.text,
-          addedAltStates[0].uz.text,
-          addedAltStates[0].en.text
-        )
-      );
-      addedTextStates.slice(1).map((texts) => {
-        addText(data.block_id, texts.ru.text, texts.uz.text, texts.en.text);
+    if (addedFile) {
+      addBlock(
+        sectionId,
+        addedTextStates[0].ru.text,
+        addedTextStates[0].uz.text,
+        addedTextStates[0].en.text
+      ).then((data) => {
+        addFile(data.block_id, addedFile.formData).then((data) =>
+          addAlt(
+            data.file_id,
+            addedAltStates[0].ru.text,
+            addedAltStates[0].uz.text,
+            addedAltStates[0].en.text
+          )
+        );
+        addedTextStates.slice(1).map((texts) => {
+          addText(data.block_id, texts.ru.text, texts.uz.text, texts.en.text);
+        });
       });
-    });
+    }
   };
 
   useEffect(() => {
@@ -206,11 +201,22 @@ export default function ContentAdminAdd({ block, sectionId }) {
             <input
               type="submit"
               value="Добавить блок"
-              // disabled={
-              //   addedTextStates?.length === 0 ||
-              //   addedFile?.length === 0 ||
-              //   (addedAltStates?.length === 0 && true)
-              // }
+              disabled={
+                addedTextStates?.[0]?.ru?.text.length === 0 ||
+                addedTextStates?.[0]?.uz?.text.length === 0 ||
+                addedTextStates?.[0]?.en?.text.length === 0 ||
+                addedTextStates?.[1]?.ru?.text.length === 0 ||
+                addedTextStates?.[1]?.uz?.text.length === 0 ||
+                addedTextStates?.[1]?.en?.text.length === 0 ||
+                addedFile === null ||
+                addedFile?.length === 0 ||
+                addedAltStates?.[0]?.ru?.text.length === 0 ||
+                addedAltStates?.[0]?.uz?.text.length === 0 ||
+                addedAltStates?.[0]?.en?.text.length === 0 ||
+                addedAltStates?.[1]?.ru?.text.length === 0 ||
+                addedAltStates?.[1]?.uz?.text.length === 0 ||
+                (addedAltStates?.[1]?.en?.text.length === 0 && true)
+              }
             />
           </form>
           <button onClick={() => setIsAdd(false)}>Назад</button>
