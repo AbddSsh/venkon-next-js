@@ -92,3 +92,91 @@ export const putContentAlt = async (fileId, text, lng) => {
     alert(`Ошибка... ${error}`);
   }
 };
+
+export const addBlock = async (sectionId, textRu, textUz, textEn) => {
+  try {
+    const { data } = await $authHost.post("/vencon/admin/create/block", {
+      section_id: sectionId,
+      name: "admin's block",
+      text: [
+        {
+          text: textRu,
+          language: "ru",
+        },
+        {
+          text: textUz,
+          language: "uz",
+        },
+        {
+          text: textEn,
+          language: "en",
+        },
+      ],
+    });
+    return data;
+  } catch (error) {
+    alert(`Ошибка... ${error}`);
+  }
+};
+
+export const addFile = async (blockId, formData) => {
+  try {
+    const { data } = await $authHost.put(
+      `/vencon/admin/add/file?file_id=${id}`,
+      formData
+    );
+    return data;
+  } catch (error) {
+    alert(`Ошибка... ${error}`);
+  }
+};
+
+export const addAlt = async (fileId, textRu, textUz, textEn) => {
+  try {
+    const { data } = await $authHost.put("/vencon/admin/add/alt", {
+      file_id: fileId,
+      alt: [
+        {
+          text: textRu,
+          language: "ru",
+        },
+        {
+          text: textUz,
+          language: "uz",
+        },
+        {
+          text: textEn,
+          language: "en",
+        },
+      ],
+    });
+    return data;
+  } catch (error) {
+    alert(`Ошибка... ${error}`);
+  }
+};
+
+export const addText = async (blockId, textRu, textUz, textEn) => {
+  try {
+    const { data } = await $authHost.post("/vencon/admin/add/text", {
+      block_id: blockId,
+      text: [
+        {
+          text: textRu,
+          language: "ru",
+        },
+        {
+          text: textUz,
+          language: "uz",
+        },
+        {
+          text: textEn,
+          language: "en",
+        },
+      ],
+    });
+    return data;
+  } catch (error) {
+    alert(`Ошибка... ${error}`);
+  }
+};

@@ -7,7 +7,7 @@ import {
 } from "@/services/admin";
 import { useEffect, useState } from "react";
 
-export default function ContentAdmin({ block, pageId, lng }) {
+export default function ContentAdminEdit({ block, pageId, lng }) {
   const [isChange, setIsChange] = useState(false);
   const [fileStates, setFileStates] = useState(null);
   const [altStates, setAltStates] = useState([]);
@@ -28,8 +28,6 @@ export default function ContentAdmin({ block, pageId, lng }) {
     );
   };
 
-  const formData = new FormData();
-
   const handleChangeFile = (event, id) => {
     const formData = new FormData();
     formData.append("file", event.target.files[0]);
@@ -48,7 +46,9 @@ export default function ContentAdmin({ block, pageId, lng }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    putContentFile(fileStates.fileId, fileStates.formData);
+    if (fileStates) {
+      putContentFile(fileStates.fileId, fileStates.formData);
+    }
     putContentAlt(altStates[0].fileId, altStates[0].text, lng);
     textStates.map((text) => {
       putContentText(text.id, text.text);
@@ -168,11 +168,7 @@ export default function ContentAdmin({ block, pageId, lng }) {
                 />
               </label>
             ))}
-            <input
-              type="submit"
-              value="Сохранить изменения"
-              // disabled={}
-            />
+            <input type="submit" value="Сохранить изменения" />
           </form>
           <button onClick={() => setIsChange(false)}>Назад</button>
         </div>

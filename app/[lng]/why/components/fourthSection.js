@@ -4,7 +4,8 @@ import { useState } from "react";
 import styles from "../styles/FourthSection.module.css";
 import titleStyle from "../styles/SecondSection.module.css";
 import Image from "next/image";
-import ContentAdmin from "@/app/adminvenkon/components/contentAdmin";
+import ContentAdminEdit from "@/app/adminvenkon/components/contentAdminEdit";
+import ContentAdminAdd from "@/app/adminvenkon/components/contentAdminAdd";
 
 export default function FourthSection({ section, lng, pageId, isAdmin }) {
   const [expandedBlocks, setExpandedBlocks] = useState(
@@ -50,8 +51,8 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
               </div>
               <Image
                 className={styles.fourth_image}
-                src={block.files[0].url}
-                alt={block.files[0].alts.text}
+                src={block?.files[0]?.url}
+                alt={block?.files[0]?.alts[0]?.text}
                 width={300}
                 height={150}
                 loading="lazy"
@@ -59,12 +60,22 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
             </div>
             <div style={{ marginBottom: "20px", marginTop: "-5px" }}>
               {isAdmin && (
-                <ContentAdmin block={block} pageId={pageId} lng={lng} />
+                <div>
+                  <ContentAdminEdit block={block} pageId={pageId} lng={lng} />
+                </div>
               )}
             </div>
           </div>
         ))}
       </div>
+      {isAdmin && (
+        <ContentAdminAdd
+          block={section?.blocks[0]}
+          pageId={pageId}
+          lng={lng}
+          sectionId={section.id}
+        />
+      )}
     </div>
   );
 }

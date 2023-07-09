@@ -7,7 +7,8 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
 import styles from "../styles/SecondSection.module.css";
 import Image from "next/image";
-import ContentAdmin from "@/app/adminvenkon/components/contentAdmin";
+import ContentAdminEdit from "@/app/adminvenkon/components/contentAdminEdit";
+import ContentAdminAdd from "@/app/adminvenkon/components/contentAdminAdd";
 
 export default function SecondSection({ section, lng, pageId, isAdmin }) {
   return (
@@ -54,19 +55,24 @@ export default function SecondSection({ section, lng, pageId, isAdmin }) {
               <div key={block.id} className={styles.sec_img_wrap}>
                 <Image
                   className={styles.sec_image}
-                  src={block.files[0].url}
-                  alt={block.files[0].alts.text}
+                  src={block?.files[0].url}
+                  alt={block?.files[0]?.alts[0]?.text}
                   width={300}
                   height={150}
                 />
               </div>
             </div>
             {isAdmin && (
-              <ContentAdmin block={block} pageId={pageId} lng={lng} />
+              <div>
+                <ContentAdminEdit block={block} pageId={pageId} lng={lng} />
+              </div>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
+      {isAdmin && (
+        <ContentAdminAdd block={section?.blocks[0]} sectionId={section.id} />
+      )}
     </div>
   );
 }

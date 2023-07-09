@@ -23,8 +23,8 @@
   max-height: 25%;
   object-fit: cover;
   object-position: center;
-  -webkit-mask-image: radial-gradient(rgb(51, 0, 80) -25%, transparent 65%);
-  mask-image: radial-gradient(rgb(51, 0, 80) -25%, transparent 65%);
+  -webkit-mask-image: radial-gradient(rgb(51, 0, 80) -7%, transparent 75%);
+  mask-image: radial-gradient(rgb(51, 0, 80) -7%, transparent 75%);
 }
 
 /* .third__wrapper {
