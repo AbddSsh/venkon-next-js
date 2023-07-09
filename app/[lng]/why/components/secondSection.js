@@ -51,11 +51,11 @@ export default function SecondSection({ section, lng, pageId, isAdmin }) {
         {section?.blocks.map((block, index) => (
           <SwiperSlide key={index}>
             <div className={styles.sec_wrapper}>
-              <div className={styles.sec_text}>{block.texts[0].text}</div>
+              <div className={styles.sec_text}>{block?.texts[0]?.text}</div>
               <div key={block.id} className={styles.sec_img_wrap}>
                 <Image
                   className={styles.sec_image}
-                  src={block?.files[0].url}
+                  src={block?.files[0]?.url}
                   alt={block?.files[0]?.alts[0]?.text}
                   width={300}
                   height={150}

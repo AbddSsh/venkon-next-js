@@ -6,13 +6,14 @@ import {
   putContentText,
 } from "@/services/admin";
 import { useEffect, useState } from "react";
+import ContentAdminRemove from "./contentAdminRemove";
 
 export default function ContentAdminEdit({ block, pageId, lng }) {
   const [isChange, setIsChange] = useState(false);
   const [fileStates, setFileStates] = useState(null);
   const [altStates, setAltStates] = useState([]);
   const [textStates, setTextStates] = useState([]);
-  console.log(block);
+
   const updateTextStateById = (id, newText) => {
     setTextStates((prevTextStates) =>
       prevTextStates.map((textState) =>
@@ -175,6 +176,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
       ) : (
         <div>
           <button onClick={() => setIsChange(true)}>Изменить</button>
+          <ContentAdminRemove blockId={block.id} />
         </div>
       )}
     </div>

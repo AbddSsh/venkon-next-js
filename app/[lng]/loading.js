@@ -8,7 +8,7 @@ export default function LoadingHome() {
         height: "80vh",
       }}
     >
-      <h1 style={{ color: "#303030" }}>Loading home page...</h1>
+      <h1 style={{ color: "#303030" }}>Loading page...</h1>
     </div>
   );
 }

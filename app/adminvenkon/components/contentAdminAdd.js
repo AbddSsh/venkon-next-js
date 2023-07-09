@@ -1,13 +1,13 @@
 "use client";
 
-import { addBlock } from "@/services/admin";
+import { addAlt, addBlock, addFile, addText } from "@/services/admin";
 import { useEffect, useState } from "react";
 
 export default function ContentAdminAdd({ block, sectionId }) {
   const [isAdd, setIsAdd] = useState(false);
   const lng = ["ru", "uz", "en"];
   const [addedTextStates, setAddedTextStates] = useState([]);
-  const [addedFile, setAddedFile] = useState([]);
+  const [addedFile, setAddedFile] = useState(null);
   const [addedAltStates, setAddedAltStates] = useState([]);
 
   const handleChangeFile = (event) => {
@@ -15,22 +15,36 @@ export default function ContentAdminAdd({ block, sectionId }) {
     formData.append("file", event.target.files[0]);
     setAddedFile({ formData: formData });
   };
-  const handleChangeAlt = (index, event) => {
-    const { value } = event.target;
-    const updatedAltStates = lng.map((lang, i) => ({
-      text: i === index ? value : "",
-      language: lang,
-    }));
-    setAddedAltStates(updatedAltStates);
+
+  const handleChangeAlt = (lang, index, event) => {
+    const updatedText = event.target.value;
+    setAddedAltStates((prevStates) => {
+      const updatedStates = [...prevStates];
+      updatedStates[index] = {
+        ...updatedStates[index],
+        [lang]: {
+          ...updatedStates[index][lang],
+          text: updatedText,
+        },
+      };
+      return updatedStates;
+    });
   };
-  const handleChangeText = (lang, event) => {
-    // const { value } = event.target;
-    // const updatedTextState = lng.map((language) => ({
-    //   text: language === lang ? value : "",
-    //   language: language,
-    // }));
-    // setAddedTextStates(updatedTextState);
-    // console.log(addedTextStates);
+
+  const handleChangeText = (lang, index, event) => {
+    const updatedText = event.target.value;
+    setAddedTextStates((prevStates) => {
+      const updatedStates = [...prevStates];
+      updatedStates[index] = {
+        ...updatedStates[index],
+        [lang]: {
+          ...updatedStates[index][lang],
+          text: updatedText,
+        },
+      };
+      return updatedStates;
+    });
+    console.log(addedTextStates);
   };
 
   const handleSubmit = (event) => {
@@ -42,20 +56,45 @@ export default function ContentAdminAdd({ block, sectionId }) {
     // textStates.map((text) => {
     //   putContentText(text.id, text.text);
     // });
-
-    console.log(addedTextStates);
-    console.log(addedFile);
-    console.log(addedAltStates);
+    addBlock(
+      sectionId,
+      addedTextStates[0].ru.text,
+      addedTextStates[0].uz.text,
+      addedTextStates[0].en.text
+    ).then((data) => {
+      addFile(data.block_id, addedFile.formData).then((data) =>
+        addAlt(
+          data.file_id,
+          addedAltStates[0].ru.text,
+          addedAltStates[0].uz.text,
+          addedAltStates[0].en.text
+        )
+      );
+      addedTextStates.slice(1).map((texts) => {
+        addText(data.block_id, texts.ru.text, texts.uz.text, texts.en.text);
+      });
+    });
   };
 
   useEffect(() => {
-    const textsBlock = block?.texts.map((obj, index) => {
-      const texts = lng.map((lang) => {
-        return { text: "", language: lang };
-      });
-      return texts;
-    });
+    const textsBlock = block?.texts.reduce((acc, obj) => {
+      const texts = lng.reduce((langAcc, lang) => {
+        langAcc[lang] = { text: "" };
+        return langAcc;
+      }, {});
+      acc.push(texts);
+      return acc;
+    }, []);
     setAddedTextStates(textsBlock);
+    const altBlock = block?.files[0].alts.reduce((acc, obj) => {
+      const alts = lng.reduce((langAcc, lang) => {
+        langAcc[lang] = { text: "" };
+        return langAcc;
+      }, {});
+      acc.push(alts);
+      return acc;
+    }, []);
+    setAddedAltStates(altBlock);
   }, []);
 
   return (
@@ -127,7 +166,8 @@ export default function ContentAdminAdd({ block, sectionId }) {
                         borderRadius: "15px",
                         border: "0.5px solid #606060",
                       }}
-                      onChange={(event) => handleChangeAlt(index, event)}
+                      value={addedAltStates[index]?.[lang]?.text}
+                      onChange={(event) => handleChangeAlt(lang, index, event)}
                     />
                   </label>
                 ))}
@@ -156,7 +196,8 @@ export default function ContentAdminAdd({ block, sectionId }) {
                         borderRadius: "15px",
                         border: "0.5px solid #606060",
                       }}
-                      onChange={(event) => handleChangeText(lang, event)}
+                      value={addedTextStates[index][lang].text}
+                      onChange={(event) => handleChangeText(lang, index, event)}
                     />
                   </label>
                 ))}
@@ -165,18 +206,20 @@ export default function ContentAdminAdd({ block, sectionId }) {
             <input
               type="submit"
               value="Добавить блок"
-              disabled={
-                addedTextStates.length === 0 ||
-                addedFile.length === 0 ||
-                (addedAltStates.length === 0 && true)
-              }
+              // disabled={
+              //   addedTextStates?.length === 0 ||
+              //   addedFile?.length === 0 ||
+              //   (addedAltStates?.length === 0 && true)
+              // }
             />
           </form>
           <button onClick={() => setIsAdd(false)}>Назад</button>
         </div>
       ) : (
         <div>
-          <button onClick={() => setIsAdd(true)}>Добавить блок</button>
+          <button style={{ color: "green" }} onClick={() => setIsAdd(true)}>
+            Добавить блок
+          </button>
         </div>
       )}
     </div>

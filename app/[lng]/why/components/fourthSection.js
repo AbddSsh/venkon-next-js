@@ -72,7 +72,6 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
         <ContentAdminAdd
           block={section?.blocks[0]}
           pageId={pageId}
-          lng={lng}
           sectionId={section.id}
         />
       )}
