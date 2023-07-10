@@ -5,6 +5,7 @@
   margin-bottom: 80px;
 }
 .sec_wrapper {
+  margin: 0 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,13 +13,6 @@
   -webkit-align-items: center;
   -webkit-justify-content: center;
   -webkit-box-pack: center;
-}
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .sec_wrapper {
-      margin: 0 7%;
-    }
-  }
 }
 .sec_img_wrap {
   position: relative;
@@ -55,7 +49,7 @@
   text-align: center;
   color: #303030;
   margin-right: 10%;
-  margin-left: 5%;
+  margin-left: 2.5%;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   flex-shrink: 0;
