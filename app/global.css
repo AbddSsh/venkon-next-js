@@ -312,6 +312,9 @@ footer {
 }
 
 /* SWIPER */
+.swiper-wrapper {
+  align-items: center;
+}
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: "";
@@ -319,7 +322,6 @@ footer {
   background: rgba(255, 255, 255, 0.7);
   padding: 30% 60% 30% 70%;
   border-radius: 50%;
-  margin-right: 200%;
   text-align: center;
   font-size: 2em !important;
 }
@@ -330,7 +332,6 @@ footer {
   background: rgba(255, 255, 255, 0.7);
   padding: 30% 70% 30% 60%;
   border-radius: 50%;
-  margin-left: 200%;
   text-align: center;
   font-size: 2em !important;
 }
@@ -365,13 +366,11 @@ footer {
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 1.5em !important;
     padding: 20% 40% 20% 50%;
-    margin-right: 150%;
   }
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 1.5em !important;
     padding: 20% 50% 20% 40%;
-    margin-left: 150%;
   }
 }
 @media (max-width: 991px) {
@@ -386,14 +385,6 @@ footer {
   }
   .why-wrapper {
     margin-bottom: 60px;
-  }
-  .swiper-button-next:after,
-  .swiper-container-rtl .swiper-button-prev:after {
-    margin-right: 100%;
-  }
-  .swiper-button-prev:after,
-  .swiper-container-rtl .swiper-button-prev:after {
-    margin-left: 100%;
   }
 }
 @media (min-width: 769px) {
@@ -425,13 +416,11 @@ footer {
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 1em !important;
     padding: 15% 30% 15% 35%;
-    margin-right: 30%;
   }
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 1em !important;
     padding: 15% 35% 15% 30%;
-    margin-left: 30%;
   }
 }
 @media (max-width: 576px) {
@@ -492,12 +481,14 @@ footer {
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.8em !important;
     padding: 10% 20% 10% 25%;
+    margin-left: 80%;
     margin-right: 0%;
   }
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.8em !important;
     padding: 10% 25% 10% 20%;
+    margin-right: 80%;
     margin-left: 0%;
   }
 }

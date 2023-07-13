@@ -50,22 +50,22 @@ export default function ContentAdminAdd({ block, sectionId }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (addedFile) {
-      addBlock(
-        sectionId,
-        addedTextStates[0].ru.text,
-        addedTextStates[0].uz.text,
-        addedTextStates[0].en.text
-      ).then((data) => {
+      addBlock(sectionId).then((data) => {
         addFile(data.block_id, addedFile.formData).then((data) =>
           addAlt(
             data.file_id,
-            addedAltStates[0].ru.text,
-            addedAltStates[0].uz.text,
-            addedAltStates[0].en.text
+            addedAltStates[0]?.ru?.text,
+            addedAltStates[0]?.uz?.text,
+            addedAltStates[0]?.en?.text
           )
         );
-        addedTextStates.slice(1).map((texts) => {
-          addText(data.block_id, texts.ru.text, texts.uz.text, texts.en.text);
+        addedTextStates.map((texts) => {
+          addText(
+            data.block_id,
+            texts?.ru?.text,
+            texts?.uz?.text,
+            texts?.en?.text
+          );
         });
       });
     }

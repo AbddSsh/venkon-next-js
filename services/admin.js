@@ -1,6 +1,5 @@
 import qs from "qs";
 import { $authHost, $host } from "./index";
-import axios from "axios";
 
 export const Auth = async (username, password) => {
   try {

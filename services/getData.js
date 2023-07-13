@@ -7,7 +7,7 @@ import { $host } from "./index";
 //   return data;
 // };
 
-export const getWhyWeData = async (id, lang) => {
+export const getData = async (id, lang) => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/vencon/user/page?page_id=${id}&language=${lang}`,
     { next: { revalidate: 0 } }

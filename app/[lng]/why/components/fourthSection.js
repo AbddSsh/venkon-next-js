@@ -6,6 +6,7 @@ import titleStyle from "../styles/SecondSection.module.css";
 import Image from "next/image";
 import ContentAdminEdit from "@/app/adminvenkon/components/contentAdminEdit";
 import ContentAdminAdd from "@/app/adminvenkon/components/contentAdminAdd";
+import ContentAdminRemove from "@/app/adminvenkon/components/contentAdminRemove";
 
 export default function FourthSection({ section, lng, pageId, isAdmin }) {
   const [expandedBlocks, setExpandedBlocks] = useState(
@@ -62,6 +63,7 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
               {isAdmin && (
                 <div>
                   <ContentAdminEdit block={block} pageId={pageId} lng={lng} />
+                  <ContentAdminRemove blockId={block.id} />
                 </div>
               )}
             </div>

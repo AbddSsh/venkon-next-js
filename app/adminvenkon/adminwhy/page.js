@@ -2,14 +2,13 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../layout";
-import { getWhyusPageData } from "@/services/admin";
 import { useRouter } from "next/navigation";
 import FirstSection from "@/app/[lng]/why/components/firstSection";
 import SecondSection from "@/app/[lng]/why/components/secondSection";
 import ThirdSection from "@/app/[lng]/why/components/thirdSection";
 import FourthSection from "@/app/[lng]/why/components/fourthSection";
 import SeoAdmin from "../components/seoAdmin";
-import { getWhyWeData } from "@/services/getData";
+import { getData } from "@/services/getData";
 
 export default function WhyUsAdmin() {
   const { isAuth } = useContext(AuthContext);
@@ -21,7 +20,7 @@ export default function WhyUsAdmin() {
     const fetchData = async () => {
       const langList = ["ru", "uz", "en"];
       const promises = langList.map((lang) =>
-        getWhyWeData(pageId, lang).then((data) => ({ [lang]: data }))
+        getData(pageId, lang).then((data) => ({ [lang]: data }))
       );
       const results = await Promise.all(promises);
       setData(results);

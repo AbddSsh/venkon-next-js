@@ -6,7 +6,6 @@ import {
   putContentText,
 } from "@/services/admin";
 import { useEffect, useState } from "react";
-import ContentAdminRemove from "./contentAdminRemove";
 
 export default function ContentAdminEdit({ block, pageId, lng }) {
   const [isChange, setIsChange] = useState(false);
@@ -56,13 +55,15 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
     });
   };
   useEffect(() => {
-    if (block) {
-      const initialTextStates = block.texts.map((text) => ({
+    if (block.texts) {
+      const initialTextStates = block?.texts.map((text) => ({
         id: text.id,
         text: text.text,
       }));
       setTextStates(initialTextStates);
-      const initialAltStates = block.files.map((file) => ({
+    }
+    if (block.files) {
+      const initialAltStates = block?.files.map((file) => ({
         fileId: file.id,
         altId: file.alts[0].id,
         text: file.alts[0].text,
@@ -94,31 +95,60 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
               margin: "10px",
             }}
           >
-            {block?.files.map((file, index) => (
-              <div key={file.id}>
-                <label
-                  style={{
-                    marginBottom: "10px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <span style={{ fontWeight: "500", marginBottom: "10px" }}>
-                    Edit file:
-                  </span>
-                  <input
-                    type="file"
-                    onChange={(event) => handleChangeFile(event, file.id)}
+            {block.files.length > 0 &&
+              block?.files.map((file, index) => (
+                <div key={file.id}>
+                  <label
                     style={{
-                      padding: "10px",
-                      borderRadius: "15px",
-                      border: "0.5px solid #606060",
+                      marginBottom: "10px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
-                  />
-                </label>
+                  >
+                    <span style={{ fontWeight: "500", marginBottom: "10px" }}>
+                      Edit file:
+                    </span>
+                    <input
+                      type="file"
+                      onChange={(event) => handleChangeFile(event, file.id)}
+                      style={{
+                        padding: "10px",
+                        borderRadius: "15px",
+                        border: "0.5px solid #606060",
+                      }}
+                    />
+                  </label>
+                  <label
+                    style={{
+                      marginBottom: "10px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span style={{ fontWeight: "500", marginBottom: "5px" }}>
+                      Edit alt for image:
+                    </span>
+                    <input
+                      type="text"
+                      value={altStates[index].text || ""}
+                      onChange={(event) => handleChangeAlt(index, event)}
+                      style={{
+                        padding: "10px",
+                        borderRadius: "15px",
+                        border: "0.5px solid #606060",
+                      }}
+                    />
+                  </label>
+                </div>
+              ))}
+            {block.texts.length > 0 &&
+              block?.texts.map((text, index) => (
                 <label
+                  key={text.id}
                   style={{
                     marginBottom: "10px",
                     display: "flex",
@@ -128,12 +158,12 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
                   }}
                 >
                   <span style={{ fontWeight: "500", marginBottom: "5px" }}>
-                    Edit alt for image:
+                    Edit text:
                   </span>
                   <input
                     type="text"
-                    value={altStates[index].text || ""}
-                    onChange={(event) => handleChangeAlt(index, event)}
+                    value={textStates[index].text || ""}
+                    onChange={(event) => handleChangeText(index, event)}
                     style={{
                       padding: "10px",
                       borderRadius: "15px",
@@ -141,34 +171,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
                     }}
                   />
                 </label>
-              </div>
-            ))}
-            {block?.texts.map((text, index) => (
-              <label
-                key={text.id}
-                style={{
-                  marginBottom: "10px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <span style={{ fontWeight: "500", marginBottom: "5px" }}>
-                  Edit text:
-                </span>
-                <input
-                  type="text"
-                  value={textStates[index].text || ""}
-                  onChange={(event) => handleChangeText(index, event)}
-                  style={{
-                    padding: "10px",
-                    borderRadius: "15px",
-                    border: "0.5px solid #606060",
-                  }}
-                />
-              </label>
-            ))}
+              ))}
             <input type="submit" value="Сохранить изменения" />
           </form>
           <button onClick={() => setIsChange(false)}>Назад</button>
@@ -176,7 +179,6 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
       ) : (
         <div>
           <button onClick={() => setIsChange(true)}>Изменить</button>
-          <ContentAdminRemove blockId={block.id} />
         </div>
       )}
     </div>

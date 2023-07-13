@@ -1,7 +1,36 @@
-export default function Home({ params: { lng } }) {
+import { getData } from "@/services/getData";
+import FirstHome from "./components/firstHome";
+import SecondHome from "./components/secondHome";
+import ThirdHome from "./components/thirdHome";
+import FourthHome from "./components/fourthHome";
+
+export async function generateMetadata({ params: { lng } }) {
+  const pageId = 4;
+  const response = await getData(pageId, lng);
+  return {
+    title: response.seo_title,
+    description: response.seo_description,
+    keywords: response.seo_keywords,
+  };
+}
+
+export default async function Home({ params: { lng } }) {
+  const pageId = 4;
+  const response = await getData(pageId, lng);
   return (
     <>
-      <h1>Home</h1>
+      <div>
+        <FirstHome section={response?.sections[0]} lng={lng} />
+      </div>
+      <div>
+        <SecondHome section={response?.sections[1]} lng={lng} />
+      </div>
+      <div>
+        <ThirdHome section={response?.sections[2]} lng={lng} />
+      </div>
+      <div>
+        <FourthHome section={response?.sections[3]} lng={lng} />
+      </div>
     </>
   );
 }
