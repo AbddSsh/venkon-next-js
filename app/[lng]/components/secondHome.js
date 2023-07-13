@@ -14,13 +14,13 @@ import ContentAdminRemove from "@/app/adminvenkon/components/contentAdminRemove"
 export default function SecondHome({ section, lng, pageId, isAdmin }) {
   return (
     <div className="why-wrapper">
-      <div className={styles.second_main_title}>
+      <h2 className={styles.second_main_title}>
         {lng === "ru"
           ? "Что мы делаем?"
           : lng === "en"
           ? "What we do?"
           : "Bizning faoliyatimiz haqida"}
-      </div>
+      </h2>
       <Swiper
         slidesPerView={1}
         loop={true}

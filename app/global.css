@@ -319,21 +319,21 @@ footer {
 .swiper-container-rtl .swiper-button-prev:after {
   content: "";
   color: rgb(103, 39, 175);
-  background: rgba(255, 255, 255, 0.7);
-  padding: 30% 60% 30% 70%;
+  /* background: rgba(255, 255, 255, 0.7); */
+  padding: 80% 150% 80% 150%;
   border-radius: 50%;
   text-align: center;
-  font-size: 2em !important;
+  font-size: 4em !important;
 }
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: "";
   color: rgb(103, 39, 175);
-  background: rgba(255, 255, 255, 0.7);
-  padding: 30% 70% 30% 60%;
+  /* background: rgba(255, 255, 255, 0.8); */
+  padding: 80% 150% 80% 150%;
   border-radius: 50%;
   text-align: center;
-  font-size: 2em !important;
+  font-size: 4em !important;
 }
 
 /* MEDIA */
@@ -354,6 +354,16 @@ footer {
   .why-wrapper {
     margin-bottom: 80px;
   }
+  .swiper-button-next:after,
+  .swiper-container-rtl .swiper-button-prev:after {
+    padding: 60% 120% 60% 120%;
+    font-size: 3em !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-container-rtl .swiper-button-prev:after {
+    padding: 60% 120% 60% 120%;
+    font-size: 3em !important;
+  }
 }
 @media (max-width: 1199px) {
   .my-container {
@@ -366,11 +376,15 @@ footer {
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 1.5em !important;
     padding: 20% 40% 20% 50%;
+    margin-left: 80%;
+    margin-right: -40%;
   }
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 1.5em !important;
     padding: 20% 50% 20% 40%;
+    margin-right: 80%;
+    margin-left: -40%;
   }
 }
 @media (max-width: 991px) {
@@ -482,14 +496,14 @@ footer {
     font-size: 0.8em !important;
     padding: 10% 20% 10% 25%;
     margin-left: 80%;
-    margin-right: 0%;
+    margin-right: -40%;
   }
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.8em !important;
     padding: 10% 25% 10% 20%;
     margin-right: 80%;
-    margin-left: 0%;
+    margin-left: -40%;
   }
 }
 @media (max-width: 367px) {
@@ -510,14 +524,10 @@ footer {
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.5em !important;
     padding: 8% 14% 8% 16%;
-    margin-left: 80%;
-    margin-right: 0%;
   }
   .swiper-button-prev:after,
   .swiper-container-rtl .swiper-button-prev:after {
     font-size: 0.5em !important;
     padding: 8% 16% 8% 14%;
-    margin-right: 80%;
-    margin-left: 0%;
   }
 }

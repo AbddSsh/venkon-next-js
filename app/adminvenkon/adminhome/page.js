@@ -9,6 +9,7 @@ import FirstHome from "@/app/[lng]/components/firstHome";
 import SecondHome from "@/app/[lng]/components/secondHome";
 import ThirdHome from "@/app/[lng]/components/thirdHome";
 import FourthHome from "@/app/[lng]/components/fourthHome";
+import FifthHome from "@/app/[lng]/components/fifthHome";
 
 export default function HomeAdmin() {
   const { isAuth } = useContext(AuthContext);
@@ -135,6 +136,26 @@ export default function HomeAdmin() {
               />
               <FourthHome
                 section={data[2]?.en?.sections[3]}
+                lng="en"
+                isAdmin={isAuth}
+                pageId={pageId}
+              />
+            </div>
+            <div>
+              <FifthHome
+                section={data[0]?.ru?.sections[4]}
+                lng="ru"
+                isAdmin={isAuth}
+                pageId={pageId}
+              />
+              <FifthHome
+                section={data[1]?.uz?.sections[4]}
+                lng="uz"
+                isAdmin={isAuth}
+                pageId={pageId}
+              />
+              <FifthHome
+                section={data[2]?.en?.sections[4]}
                 lng="en"
                 isAdmin={isAuth}
                 pageId={pageId}

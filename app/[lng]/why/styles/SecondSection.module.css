@@ -5,7 +5,7 @@
   margin-bottom: 80px;
 }
 .sec_wrapper {
-  /* margin: 0 8%; */
+  margin: 0 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,7 +49,7 @@
   text-align: center;
   color: #303030;
   margin-right: 10%;
-  /* margin-left: 2.5%; */
+  margin-left: 2.5%;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   flex-shrink: 0;
@@ -147,6 +147,9 @@
   }
 }
 @media (max-width: 576px) {
+  .sec_wrapper {
+    margin: 0 4%;
+  }
   .why_sec_title {
     font-size: 22px;
     margin-bottom: 20px;
@@ -171,7 +174,6 @@
   }
   .sec_text {
     font-size: 10px;
-    line-height: 1;
     margin-right: 5%;
   }
 }
