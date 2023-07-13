@@ -48,21 +48,23 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
     event.preventDefault();
     if (fileStates) {
       putContentFile(fileStates.fileId, fileStates.formData);
+      putContentAlt(altStates[0].fileId, altStates[0].text, lng);
     }
-    putContentAlt(altStates[0].fileId, altStates[0].text, lng);
-    textStates.map((text) => {
-      putContentText(text.id, text.text);
-    });
+    if (block.texts[0].id) {
+      textStates.map((text) => {
+        putContentText(text.id, text.text);
+      });
+    }
   };
   useEffect(() => {
-    if (block.texts) {
+    if (block.texts[0].id) {
       const initialTextStates = block?.texts.map((text) => ({
         id: text.id,
         text: text.text,
       }));
       setTextStates(initialTextStates);
     }
-    if (block.files) {
+    if (block.files[0].id) {
       const initialAltStates = block?.files.map((file) => ({
         fileId: file.id,
         altId: file.alts[0].id,
@@ -95,7 +97,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
               margin: "10px",
             }}
           >
-            {block.files.length > 0 &&
+            {block.files[0].id &&
               block?.files.map((file, index) => (
                 <div key={file.id}>
                   <label
@@ -145,7 +147,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
                   </label>
                 </div>
               ))}
-            {block.texts.length > 0 &&
+            {block.texts[0].id &&
               block?.texts.map((text, index) => (
                 <label
                   key={text.id}

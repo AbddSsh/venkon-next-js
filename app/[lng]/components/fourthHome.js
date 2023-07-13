@@ -1,5 +1,7 @@
 import ContentAdminEdit from "@/app/adminvenkon/components/contentAdminEdit";
 import styles from "../styles/FourthHome.module.css";
+import ContentAdminAdd from "@/app/adminvenkon/components/contentAdminAdd";
+import ContentAdminRemove from "@/app/adminvenkon/components/contentAdminRemove";
 
 export default function FourthHome({ section, isAdmin, pageId, lng }) {
   return (
