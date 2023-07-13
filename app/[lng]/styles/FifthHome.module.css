@@ -65,6 +65,7 @@
   }
   .fifth_image {
     border-radius: 15px;
+    height: 35vw;
   }
 }
 @media (max-width: 576px) {
@@ -77,6 +78,7 @@
   }
   .fifth_image {
     border-radius: 10px;
+    height: 40vw;
   }
 }
 @media (max-width: 367px) {
