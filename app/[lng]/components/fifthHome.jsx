@@ -11,36 +11,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ContentAdminEdit from "@/app/adminvenkon/components/contentAdminEdit";
 import ContentAdminAdd from "@/app/adminvenkon/components/contentAdminAdd";
 import ContentAdminRemove from "@/app/adminvenkon/components/contentAdminRemove";
+import { useMediaQuery } from "react-responsive";
 
 export default function FifthHome({ section, isAdmin, pageId, lng }) {
-  // const CustomSwiperWrapper = styled.div`
-  //   .swiper-wrapper {
-  //     align-items: center;
-  //   }
-  //   .swiper-button-next:after,
-  //   .swiper-container-rtl .swiper-button-prev:after {
-  //     content: "";
-  //     color: rgb(103, 39, 175);
-  //     background: rgba(255, 255, 255, 0.7);
-  //     padding: 80% 150% 80% 150%;
-  //     border-radius: 50%;
-  //     text-align: center;
-  //     font-size: 4em;
-  //   }
-  //   .swiper-button-prev:after,
-  //   .swiper-container-rtl .swiper-button-prev:after {
-  //     content: "";
-  //     color: rgb(103, 39, 175);
-  //     background: rgba(255, 255, 255, 0.8);
-  //     padding: 80% 150% 80% 150%;
-  //     border-radius: 50%;
-  //     text-align: center;
-  //     font-size: 4em;
-  //   }
-  // `;
+  const isMobile = useMediaQuery({ maxWidth: 576 });
   return (
     <div className="why-wrapper">
-      {/* <CustomSwiperWrapper> */}
       <div className={styles.fifth_main_title}>
         {lng === "ru"
           ? "Наши работы"
@@ -50,9 +26,9 @@ export default function FifthHome({ section, isAdmin, pageId, lng }) {
       </div>
       <Swiper
         className={styles.my_swiper}
-        slidesPerView={1}
+        slidesPerView={isMobile ? 1.1 : 1}
         loop={true}
-        navigation={true}
+        navigation={isMobile ? false : true}
         modules={[Navigation]}
       >
         {section?.blocks.map((block, index) => (
@@ -80,7 +56,6 @@ export default function FifthHome({ section, isAdmin, pageId, lng }) {
       {isAdmin && (
         <ContentAdminAdd block={section?.blocks[0]} sectionId={section.id} />
       )}
-      {/* </CustomSwiperWrapper> */}
     </div>
   );
 }

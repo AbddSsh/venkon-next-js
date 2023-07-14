@@ -73,8 +73,18 @@
     font-size: 22px;
     text-align: end;
   }
+  .my_swiper {
+  }
   .fifth_img_wrap {
-    margin: 0 4%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    margin-right: 3%;
+  }
+  .fifth_image {
+    width: 100%;
   }
   .fifth_image {
     border-radius: 10px;
@@ -86,7 +96,6 @@
     font-size: 18px;
   }
   .fifth_img_wrap {
-    margin: 0 4.5%;
   }
   .fifth_image {
     border-radius: 5px;
