@@ -24,6 +24,7 @@
 .fourth_title {
   font-size: 36px;
   font-weight: 700;
+  margin: 0;
   margin-bottom: 5%;
 }
 .fourth_text_wrap {
@@ -35,6 +36,7 @@
   font-weight: 500;
   font-size: 32px;
   flex-grow: 1;
+  margin: 0;
 }
 
 @media (min-width: 2000px) {
@@ -125,6 +127,7 @@
 @media (max-width: 576px) {
   .fourth_main_title {
     font-size: 18px;
+    margin-bottom: 2%;
   }
   .fourth_sec_title {
     font-size: 12px;

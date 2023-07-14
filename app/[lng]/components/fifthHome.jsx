@@ -17,13 +17,13 @@ export default function FifthHome({ section, isAdmin, pageId, lng }) {
   const isMobile = useMediaQuery({ maxWidth: 576 });
   return (
     <div className="why-wrapper">
-      <div className={styles.fifth_main_title}>
+      <h2 className={styles.fifth_main_title}>
         {lng === "ru"
           ? "Наши работы"
           : lng === "en"
           ? "Our works"
           : "Bizning ishlarimiz bilan tanishing"}
-      </div>
+      </h2>
       <Swiper
         className={styles.my_swiper}
         slidesPerView={isMobile ? 1.1 : 1}

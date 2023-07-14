@@ -31,12 +31,8 @@ export default function SecondHome({ section, lng, pageId, isAdmin }) {
           <SwiperSlide key={index}>
             <div className={styles.second_wrapper}>
               <div className={styles.second_texts}>
-                <div className={styles.second_title}>
-                  {block?.texts[0]?.text}
-                </div>
-                <div className={styles.second_text}>
-                  {block?.texts[1]?.text}
-                </div>
+                <h3 className={styles.second_title}>{block?.texts[0]?.text}</h3>
+                <p className={styles.second_text}>{block?.texts[1]?.text}</p>
               </div>
               <div className={styles.second_img_wrap}>
                 <Image
@@ -49,11 +45,9 @@ export default function SecondHome({ section, lng, pageId, isAdmin }) {
               </div>
             </div>
             <div className={styles.second_wrapper_mobile}>
-              <div className={styles.second_title}>{block?.texts[0]?.text}</div>
+              <h3 className={styles.second_title}>{block?.texts[0]?.text}</h3>
               <div className={styles.second_textimg}>
-                <div className={styles.second_text}>
-                  {block?.texts[1]?.text}
-                </div>
+                <p className={styles.second_text}>{block?.texts[1]?.text}</p>
                 <div className={styles.second_img_wrap}>
                   <Image
                     className={styles.second_image}

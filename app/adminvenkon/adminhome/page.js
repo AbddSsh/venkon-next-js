@@ -29,140 +29,142 @@ export default function HomeAdmin() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    typeof window !== "undefined" || (isAuth !== true && router.push("/"));
-  }, []);
-
   return (
     <>
-      {data === null ? (
-        <h1>Loading...</h1>
-      ) : (
+      {isAuth ? (
         <div>
-          <div
-            style={{
-              marginBottom: "20px",
-              textAlign: "center",
-              fontWeight: "700",
-            }}
-          >
-            SEO | Home page
-          </div>
-          <SeoAdmin seo={data[0]?.ru} lng="ru" pageId={pageId} />
-          <SeoAdmin seo={data[1]?.uz} lng="uz" pageId={pageId} />
-          <SeoAdmin seo={data[2]?.en} lng="en" pageId={pageId} />
-          <div>
-            <div
-              style={{
-                marginBottom: "20px",
-                textAlign: "center",
-                fontWeight: "700",
-              }}
-            >
-              Content | Home page
-            </div>
+          {data === null ? (
+            <h1>Loading...</h1>
+          ) : (
             <div>
-              <FirstHome
-                section={data[0]?.ru?.sections[0]}
-                isAdmin={isAuth}
-                pageId={pageId}
-                lng="ru"
-              />
-              <FirstHome
-                section={data[1]?.uz?.sections[0]}
-                isAdmin={isAuth}
-                pageId={pageId}
-                lng="uz"
-              />
-              <FirstHome
-                section={data[2]?.en?.sections[0]}
-                isAdmin={isAuth}
-                pageId={pageId}
-                lng="en"
-              />
+              <div
+                style={{
+                  marginBottom: "20px",
+                  textAlign: "center",
+                  fontWeight: "700",
+                }}
+              >
+                SEO | Home page
+              </div>
+              <SeoAdmin seo={data[0]?.ru} lng="ru" pageId={pageId} />
+              <SeoAdmin seo={data[1]?.uz} lng="uz" pageId={pageId} />
+              <SeoAdmin seo={data[2]?.en} lng="en" pageId={pageId} />
+              <div>
+                <div
+                  style={{
+                    marginBottom: "20px",
+                    textAlign: "center",
+                    fontWeight: "700",
+                  }}
+                >
+                  Content | Home page
+                </div>
+                <div>
+                  <FirstHome
+                    section={data[0]?.ru?.sections[0]}
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                    lng="ru"
+                  />
+                  <FirstHome
+                    section={data[1]?.uz?.sections[0]}
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                    lng="uz"
+                  />
+                  <FirstHome
+                    section={data[2]?.en?.sections[0]}
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                    lng="en"
+                  />
+                </div>
+                <div>
+                  <SecondHome
+                    section={data[0]?.ru?.sections[1]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SecondHome
+                    section={data[1]?.uz?.sections[1]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SecondHome
+                    section={data[2]?.en?.sections[1]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <ThirdHome
+                    section={data[0]?.ru?.sections[2]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <ThirdHome
+                    section={data[1]?.uz?.sections[2]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <ThirdHome
+                    section={data[2]?.en?.sections[2]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <FourthHome
+                    section={data[0]?.ru?.sections[3]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <FourthHome
+                    section={data[1]?.uz?.sections[3]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <FourthHome
+                    section={data[2]?.en?.sections[3]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <FifthHome
+                    section={data[0]?.ru?.sections[4]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <FifthHome
+                    section={data[1]?.uz?.sections[4]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <FifthHome
+                    section={data[2]?.en?.sections[4]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+              </div>
             </div>
-            <div>
-              <SecondHome
-                section={data[0]?.ru?.sections[1]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <SecondHome
-                section={data[1]?.uz?.sections[1]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <SecondHome
-                section={data[2]?.en?.sections[1]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-            <div>
-              <ThirdHome
-                section={data[0]?.ru?.sections[2]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <ThirdHome
-                section={data[1]?.uz?.sections[2]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <ThirdHome
-                section={data[2]?.en?.sections[2]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-            <div>
-              <FourthHome
-                section={data[0]?.ru?.sections[3]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <FourthHome
-                section={data[1]?.uz?.sections[3]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <FourthHome
-                section={data[2]?.en?.sections[3]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-            <div>
-              <FifthHome
-                section={data[0]?.ru?.sections[4]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <FifthHome
-                section={data[1]?.uz?.sections[4]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <FifthHome
-                section={data[2]?.en?.sections[4]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-          </div>
+          )}
         </div>
+      ) : (
+        <div>Вы не админ...</div>
       )}
     </>
   );

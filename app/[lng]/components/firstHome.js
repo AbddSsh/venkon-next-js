@@ -9,8 +9,8 @@ export default function FirstHome({ section, isAdmin, pageId, lng }) {
         <div key={block.id}>
           <div className={styles.first_wrapper}>
             <div className={styles.first_texts}>
-              <div className={styles.first_title}>{block?.texts[0]?.text}</div>
-              <div className={styles.first_text}>{block?.texts[1]?.text}</div>
+              <h1 className={styles.first_title}>{block?.texts[0]?.text}</h1>
+              <h2 className={styles.first_text}>{block?.texts[1]?.text}</h2>
             </div>
             <div className={styles.first_img_wrap}>
               <Image

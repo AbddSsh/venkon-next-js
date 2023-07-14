@@ -26,10 +26,13 @@
 .third_title {
   font-size: 38px;
   font-weight: 600;
+  margin: 0;
+  line-height: 150%;
 }
 .third_text {
   font-size: 28px;
   font-weight: 500;
+  margin: 0;
 }
 .third_img_wrap {
   position: relative;
@@ -97,7 +100,6 @@
   .third_text_block {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2.5%;
   }
   .third_title {
     font-size: 18px;

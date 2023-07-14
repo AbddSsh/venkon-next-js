@@ -5,19 +5,19 @@ import ContentAdminEdit from "@/app/adminvenkon/components/contentAdminEdit";
 export default function ThirdHome({ section, lng, pageId, isAdmin }) {
   return (
     <div className="why-wrapper">
-      <div className={styles.third_main_title}>
+      <h2 className={styles.third_main_title}>
         {lng === "ru"
           ? "Наши достижения"
           : lng === "en"
           ? "Our achievements"
           : "Bizning yutuqlarimiz"}
-      </div>
+      </h2>
       <div className={styles.third_wrapper}>
         <div className={styles.third_texts}>
           {section?.blocks.slice(1).map((block) => (
             <div key={block.id} className={styles.third_text_block}>
-              <div className={styles.third_title}>{block?.texts[0]?.text}</div>
-              <div className={styles.third_text}>{block?.texts[1]?.text}</div>
+              <h3 className={styles.third_title}>{block?.texts[0]?.text}</h3>
+              <p className={styles.third_text}>{block?.texts[1]?.text}</p>
               {isAdmin && (
                 <div>
                   <ContentAdminEdit block={block} pageId={pageId} lng={lng} />

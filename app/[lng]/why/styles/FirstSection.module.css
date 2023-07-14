@@ -21,6 +21,9 @@
   z-index: 4;
   max-width: 50%;
 }
+.why_cover_text p {
+  margin: 0;
+}
 .cover_overlay {
   /* position: absolute;
   top: 0px;

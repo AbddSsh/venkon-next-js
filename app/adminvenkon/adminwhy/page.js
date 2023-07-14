@@ -28,120 +28,122 @@ export default function WhyUsAdmin() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    typeof window !== "undefined" || (isAuth !== true && router.push("/"));
-  }, []);
-
   return (
     <>
-      {data === null ? (
-        <h1>Loading...</h1>
-      ) : (
+      {isAuth ? (
         <div>
-          <div
-            style={{
-              marginBottom: "20px",
-              textAlign: "center",
-              fontWeight: "700",
-            }}
-          >
-            SEO | Why us page
-          </div>
-          <SeoAdmin seo={data[0]?.ru} lng="ru" pageId={pageId} />
-          <SeoAdmin seo={data[1]?.uz} lng="uz" pageId={pageId} />
-          <SeoAdmin seo={data[2]?.en} lng="en" pageId={pageId} />
-          <div>
-            <div
-              style={{
-                marginBottom: "20px",
-                textAlign: "center",
-                fontWeight: "700",
-              }}
-            >
-              Content | Why us page
-            </div>
+          {data === null ? (
+            <h1>Loading...</h1>
+          ) : (
             <div>
-              <FirstSection
-                section={data[0]?.ru?.sections[0]}
-                isAdmin={isAuth}
-                pageId={pageId}
-                lng="ru"
-              />
-              <FirstSection
-                section={data[1]?.uz?.sections[0]}
-                isAdmin={isAuth}
-                pageId={pageId}
-                lng="uz"
-              />
-              <FirstSection
-                section={data[2]?.en?.sections[0]}
-                isAdmin={isAuth}
-                pageId={pageId}
-                lng="en"
-              />
+              <div
+                style={{
+                  marginBottom: "20px",
+                  textAlign: "center",
+                  fontWeight: "700",
+                }}
+              >
+                SEO | Why us page
+              </div>
+              <SeoAdmin seo={data[0]?.ru} lng="ru" pageId={pageId} />
+              <SeoAdmin seo={data[1]?.uz} lng="uz" pageId={pageId} />
+              <SeoAdmin seo={data[2]?.en} lng="en" pageId={pageId} />
+              <div>
+                <div
+                  style={{
+                    marginBottom: "20px",
+                    textAlign: "center",
+                    fontWeight: "700",
+                  }}
+                >
+                  Content | Why us page
+                </div>
+                <div>
+                  <FirstSection
+                    section={data[0]?.ru?.sections[0]}
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                    lng="ru"
+                  />
+                  <FirstSection
+                    section={data[1]?.uz?.sections[0]}
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                    lng="uz"
+                  />
+                  <FirstSection
+                    section={data[2]?.en?.sections[0]}
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                    lng="en"
+                  />
+                </div>
+                <div>
+                  <SecondSection
+                    section={data[0]?.ru?.sections[1]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SecondSection
+                    section={data[1]?.uz?.sections[1]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SecondSection
+                    section={data[2]?.en?.sections[1]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <ThirdSection
+                    section={data[0]?.ru?.sections[2]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <ThirdSection
+                    section={data[1]?.uz?.sections[2]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <ThirdSection
+                    section={data[2]?.en?.sections[2]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <FourthSection
+                    section={data[0]?.ru?.sections[3]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <FourthSection
+                    section={data[1]?.uz?.sections[3]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <FourthSection
+                    section={data[2]?.en?.sections[3]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+              </div>
             </div>
-            <div>
-              <SecondSection
-                section={data[0]?.ru?.sections[1]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <SecondSection
-                section={data[1]?.uz?.sections[1]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <SecondSection
-                section={data[2]?.en?.sections[1]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-            <div>
-              <ThirdSection
-                section={data[0]?.ru?.sections[2]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <ThirdSection
-                section={data[1]?.uz?.sections[2]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <ThirdSection
-                section={data[2]?.en?.sections[2]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-            <div>
-              <FourthSection
-                section={data[0]?.ru?.sections[3]}
-                lng="ru"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <FourthSection
-                section={data[1]?.uz?.sections[3]}
-                lng="uz"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-              <FourthSection
-                section={data[2]?.en?.sections[3]}
-                lng="en"
-                isAdmin={isAuth}
-                pageId={pageId}
-              />
-            </div>
-          </div>
+          )}
         </div>
+      ) : (
+        <div>Вы не админ...</div>
       )}
     </>
   );

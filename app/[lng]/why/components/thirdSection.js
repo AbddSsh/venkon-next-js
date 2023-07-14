@@ -19,9 +19,9 @@ export default function ThirdSection({ section, lng, pageId, isAdmin }) {
             loading="lazy"
           />
         </div>
-        <div className={styles.third_text}>
+        <h3 className={styles.third_text}>
           {section?.blocks[0]?.texts[0]?.text}
-        </div>
+        </h3>
       </div>
       {isAdmin && (
         <div>

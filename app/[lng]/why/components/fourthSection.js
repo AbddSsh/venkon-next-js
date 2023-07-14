@@ -24,13 +24,13 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
   };
   return (
     <div className="why-wrapper">
-      <div className={titleStyle.why_sec_title}>
+      <h2 className={titleStyle.why_sec_title}>
         {lng === "ru"
           ? "Среди наших проектов:"
           : lng === "en"
           ? "Among our projects:"
           : "Loyihalar orasida:"}
-      </div>
+      </h2>
       <div className={styles.fourth_projects}>
         {section?.blocks.map((block, index) => (
           <div key={block.id}>
@@ -43,12 +43,10 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
                 onMouseLeave={() => handleMouseLeave(index)}
                 onTouchStart={() => handleMouseEnter(index)}
               >
-                <div className={styles.fourth_text_title}>
+                <h3 className={styles.fourth_text_title}>
                   {block.texts[0].text}
-                </div>
-                <div className={styles.fourth_text_text}>
-                  {block.texts[1].text}
-                </div>
+                </h3>
+                <p className={styles.fourth_text_text}>{block.texts[1].text}</p>
               </div>
               <Image
                 className={styles.fourth_image}

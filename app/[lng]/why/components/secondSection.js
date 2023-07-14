@@ -14,13 +14,13 @@ import ContentAdminRemove from "@/app/adminvenkon/components/contentAdminRemove"
 export default function SecondSection({ section, lng, pageId, isAdmin }) {
   return (
     <div className="why-wrapper">
-      <div className={styles.why_sec_title}>
+      <h2 className={styles.why_sec_title}>
         {lng === "ru"
           ? "Наши возможности"
           : lng === "en"
           ? "Our possibilities"
           : "Bizning imkoniyatlarimiz"}
-      </div>
+      </h2>
       {/* <SwiperCarousel section={section} /> */}
       {/* <Swiper
         slidesPerView={2}
@@ -52,7 +52,7 @@ export default function SecondSection({ section, lng, pageId, isAdmin }) {
         {section?.blocks.map((block, index) => (
           <SwiperSlide key={index}>
             <div className={styles.sec_wrapper}>
-              <div className={styles.sec_text}>{block?.texts[0]?.text}</div>
+              <h3 className={styles.sec_text}>{block?.texts[0]?.text}</h3>
               <div key={block.id} className={styles.sec_img_wrap}>
                 <Image
                   className={styles.sec_image}

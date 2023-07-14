@@ -14,8 +14,8 @@ export default function FirstSection({ section, isAdmin, pageId, lng }) {
                   {block?.texts[0]?.text}
                 </h1>
                 <div className={styles.why_cover_text}>
-                  <div>{block?.texts[1]?.text}</div>
-                  <div>{block?.texts[2]?.text}</div>
+                  <p>{block?.texts[1]?.text}</p>
+                  <p>{block?.texts[2]?.text}</p>
                 </div>
               </div>
             </div>
