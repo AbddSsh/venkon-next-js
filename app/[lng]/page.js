@@ -4,6 +4,8 @@ import SecondHome from "./components/secondHome";
 import ThirdHome from "./components/thirdHome";
 import FourthHome from "./components/fourthHome";
 import FifthHome from "./components/fifthHome";
+import SixthHome from "./components/sixthHome";
+import SeventhHome from "./components/seventhHome";
 
 export async function generateMetadata({ params: { lng } }) {
   const pageId = 4;
@@ -34,6 +36,12 @@ export default async function Home({ params: { lng } }) {
       </div>
       <div>
         <FifthHome section={response?.sections[4]} lng={lng} />
+      </div>
+      <div>
+        <SixthHome section={response?.sections[5]} lng={lng} />
+      </div>
+      <div>
+        <SeventhHome section={response?.sections[6]} lng={lng} />
       </div>
     </>
   );

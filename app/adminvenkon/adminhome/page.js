@@ -10,6 +10,8 @@ import SecondHome from "@/app/[lng]/components/secondHome";
 import ThirdHome from "@/app/[lng]/components/thirdHome";
 import FourthHome from "@/app/[lng]/components/fourthHome";
 import FifthHome from "@/app/[lng]/components/fifthHome";
+import SixthHome from "@/app/[lng]/components/sixthHome";
+import SeventhHome from "@/app/[lng]/components/seventhHome";
 
 export default function HomeAdmin() {
   const { isAuth } = useContext(AuthContext);
@@ -154,6 +156,46 @@ export default function HomeAdmin() {
                   />
                   <FifthHome
                     section={data[2]?.en?.sections[4]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <SixthHome
+                    section={data[0]?.ru?.sections[5]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SixthHome
+                    section={data[1]?.uz?.sections[5]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SixthHome
+                    section={data[2]?.en?.sections[5]}
+                    lng="en"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                </div>
+                <div>
+                  <SeventhHome
+                    section={data[0]?.ru?.sections[6]}
+                    lng="ru"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SeventhHome
+                    section={data[1]?.uz?.sections[6]}
+                    lng="uz"
+                    isAdmin={isAuth}
+                    pageId={pageId}
+                  />
+                  <SeventhHome
+                    section={data[2]?.en?.sections[6]}
                     lng="en"
                     isAdmin={isAuth}
                     pageId={pageId}

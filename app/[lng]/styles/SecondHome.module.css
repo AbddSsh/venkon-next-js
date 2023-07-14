@@ -54,8 +54,8 @@
   object-position: center;
   z-index: 1;
   border-radius: 20px;
-  -webkit-mask-image: radial-gradient(rgb(51, 0, 80) 30%, transparent 90%);
-  mask-image: radial-gradient(rgb(51, 0, 80) 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(rgb(51, 0, 80) 30%, transparent 80%);
+  mask-image: radial-gradient(rgb(51, 0, 80) 30%, transparent 80%);
 }
 
 @media (min-width: 2000px) {
