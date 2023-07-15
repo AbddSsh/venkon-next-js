@@ -7,6 +7,12 @@ import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Language = ({ lng }) => {
+  const [hoverStates, setHoverStates] = useState(
+    languages.reduce((obj, lang) => {
+      obj[lang] = false;
+      return obj;
+    }, {})
+  );
   const [showLang, setShowLang] = useState(false);
   const pathname = usePathname();
   const segments = pathname.split("/");
@@ -16,13 +22,19 @@ const Language = ({ lng }) => {
     setShowLang(!showLang);
   };
 
+  const handleHover = (lang, isHovered) => {
+    setHoverStates((prevState) => ({
+      ...prevState,
+      [lang]: isHovered,
+    }));
+  };
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!event.target.closest(".lang__block")) {
         setShowLang(false);
       }
     };
-
     document.addEventListener("click", handleOutsideClick);
 
     return () => {
@@ -35,17 +47,21 @@ const Language = ({ lng }) => {
       <IoIosArrowDown style={{ marginLeft: "5px" }} />
       <div className="lang" style={{ display: !showLang && "none" }}>
         {languages.map((lang) => (
-          <div key={lang} className="lang__item">
-            <Link
-              href={path ? `/${lang + path}` : `/${lang}`}
-              className="languages"
-              style={{
-                color: lng === lang ? "rgb(68, 180, 255)" : "rgb(100,100,100)",
-              }}
-            >
-              {lang.toUpperCase()}
-            </Link>
-          </div>
+          <Link
+            onMouseEnter={() => handleHover(lang, true)}
+            onMouseLeave={() => handleHover(lang, false)}
+            key={lang}
+            href={path ? `/${lang + path}` : `/${lang}`}
+            className="languages"
+            style={{
+              color:
+                lng === lang || hoverStates[lang]
+                  ? "rgb(68, 180, 255)"
+                  : "rgb(100,100,100)",
+            }}
+          >
+            <div className="lang__item">{lang.toUpperCase()}</div>
+          </Link>
         ))}
       </div>
     </div>

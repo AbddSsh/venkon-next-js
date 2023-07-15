@@ -17,26 +17,27 @@ const BurgerLanguage = ({ lng }) => {
     <div className="burger-lang__block">
       <div className="burger-lang">
         {languages.map((lang) => (
-          <div
+          <Link
             key={lang}
-            className="burger-lang__item"
+            href={path ? `/${lang + path}` : `/${lang}`}
+            className="languages"
             style={{
-              border: `0.5px solid ${
-                lng === lang ? "rgba(68, 180, 255, 1)" : "rgba(30,30,30,0.3)"
-              }`,
-              marginLeft: lang === "ru" && "0px",
+              color: lng === lang ? "rgb(68, 180, 255)" : "rgb(100,100,100)",
             }}
           >
-            <Link
-              href={path ? `/${lang + path}` : `/${lang}`}
-              className="languages"
+            <div
+              key={lang}
+              className="burger-lang__item"
               style={{
-                color: lng === lang ? "rgb(68, 180, 255)" : "rgb(100,100,100)",
+                border: `0.5px solid ${
+                  lng === lang ? "rgba(68, 180, 255, 1)" : "rgba(30,30,30,0.3)"
+                }`,
+                marginLeft: lang === "ru" && "0px",
               }}
             >
               {lang.toUpperCase()}
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

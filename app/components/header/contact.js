@@ -5,6 +5,7 @@ import { GrClose } from "react-icons/gr";
 import ContactsBlock from "./contactsBlock";
 
 function Contact({ lng }) {
+  const [isHover, setIsHover] = useState(false);
   const [showContact, setShowContact] = useState(false);
 
   const handleContact = () => {
@@ -26,7 +27,15 @@ function Contact({ lng }) {
   return (
     <>
       <div style={{ position: "relative" }} className="contact-us">
-        <button className="contact-us-btn" onClick={handleContact}>
+        <button
+          className="contact-us-btn"
+          onClick={handleContact}
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+          style={{
+            background: isHover ? "#5442cc" : "#463b90",
+          }}
+        >
           {lng === "ru"
             ? "Связаться с нами"
             : lng === "en"
