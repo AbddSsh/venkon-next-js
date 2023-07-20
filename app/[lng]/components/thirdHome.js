@@ -31,8 +31,8 @@ export default function ThirdHome({ section, lng, pageId, isAdmin }) {
             className={styles.third_image}
             src={section?.blocks[0]?.files[0]?.url}
             alt={section?.blocks[0]?.files[0]?.alts[0]?.text}
-            width={300}
-            height={300}
+            width={400}
+            height={400}
           />
         </div>
         {isAdmin && (

@@ -17,8 +17,8 @@ export default function FirstHome({ section, isAdmin, pageId, lng }) {
                 className={styles.first_image}
                 src={block?.files[0]?.url}
                 alt={block?.files[0]?.alts[0]?.text}
-                width={300}
-                height={300}
+                width={500}
+                height={500}
                 priority
               />
             </div>
