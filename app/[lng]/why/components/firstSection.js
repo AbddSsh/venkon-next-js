@@ -23,8 +23,8 @@ export default function FirstSection({ section, isAdmin, pageId, lng }) {
               className={styles.cover_image}
               src={block?.files[0]?.url}
               alt={block?.files[0]?.alts[0]?.text}
-              width={500}
-              height={500}
+              width={300}
+              height={300}
               priority
             />
           </div>

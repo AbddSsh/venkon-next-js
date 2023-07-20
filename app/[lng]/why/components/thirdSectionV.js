@@ -12,9 +12,8 @@ export default function ThirdSectionV({ section, lng }) {
             className="third-image"
             src={section.blocks[0].files[0].url}
             alt={section.blocks[0].files[0].alts.text}
-            width={500}
-            height={500}
-            loading="lazy"
+            width={300}
+            height={300}
           />
         </div>
       </div>
