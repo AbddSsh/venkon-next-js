@@ -109,7 +109,7 @@ const EighthHome = ({ lng }) => {
                     minLength: 5,
                   })}
                   className="form-input home_input"
-                  style={{ width: "110%", borderRadius: "5px" }}
+                  style={{ borderRadius: "5px" }}
                   rows="5"
                   onResize="vertical"
                 ></textarea>
