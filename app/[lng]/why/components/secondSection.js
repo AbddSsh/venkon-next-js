@@ -58,8 +58,8 @@ export default function SecondSection({ section, lng, pageId, isAdmin }) {
                   className={styles.sec_image}
                   src={block?.files[0]?.url}
                   alt={block?.files[0]?.alts[0]?.text}
-                  width={300}
-                  height={150}
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>

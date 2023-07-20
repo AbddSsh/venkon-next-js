@@ -1,7 +1,7 @@
 .fifth_main_title {
   font-size: 48px;
   font-weight: 500;
-  text-align: end;
+  text-align: center;
   margin-bottom: 5%;
 }
 .my_swiper {
@@ -71,7 +71,7 @@
 @media (max-width: 576px) {
   .fifth_main_title {
     font-size: 22px;
-    text-align: end;
+    text-align: center;
   }
   .my_swiper {
   }
@@ -88,7 +88,7 @@
   }
   .fifth_image {
     border-radius: 10px;
-    height: 40vw;
+    height: 45vw;
   }
 }
 @media (max-width: 367px) {

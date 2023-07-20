@@ -5,6 +5,7 @@ import {
   putContentFile,
   putContentText,
 } from "@/services/admin";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ContentAdminEdit({ block, pageId, lng }) {
@@ -12,6 +13,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
   const [fileStates, setFileStates] = useState(null);
   const [altStates, setAltStates] = useState([]);
   const [textStates, setTextStates] = useState([]);
+  const router = useRouter();
 
   const updateTextStateById = (id, newText) => {
     setTextStates((prevTextStates) =>
@@ -55,6 +57,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
         putContentText(text.id, text.text);
       });
     }
+    router.push("/adminvenkon");
   };
   useEffect(() => {
     if (block.texts[0].id) {
@@ -180,7 +183,13 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
         </div>
       ) : (
         <div>
-          <button onClick={() => setIsChange(true)}>Изменить</button>
+          <button
+            onClick={() => {
+              setIsChange(true);
+            }}
+          >
+            Изменить
+          </button>
         </div>
       )}
     </div>

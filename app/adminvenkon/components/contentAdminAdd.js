@@ -1,6 +1,7 @@
 "use client";
 
 import { addAlt, addBlock, addFile, addText } from "@/services/admin";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ContentAdminAdd({ block, sectionId }) {
@@ -9,6 +10,7 @@ export default function ContentAdminAdd({ block, sectionId }) {
   const [addedTextStates, setAddedTextStates] = useState([]);
   const [addedFile, setAddedFile] = useState(null);
   const [addedAltStates, setAddedAltStates] = useState([]);
+  const router = useRouter();
 
   const handleChangeFile = (event) => {
     const formData = new FormData();
@@ -50,28 +52,27 @@ export default function ContentAdminAdd({ block, sectionId }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (block?.files[0].id && addedFile) {
-      {
-        addBlock(sectionId).then((data) => {
-          addFile(data.block_id, addedFile.formData).then((data) =>
-            addAlt(
-              data.file_id,
-              addedAltStates[0]?.ru?.text,
-              addedAltStates[0]?.uz?.text,
-              addedAltStates[0]?.en?.text
-            )
-          );
-          if (block?.texts[0].id) {
-            addedTextStates.map((texts) => {
-              addText(
-                data.block_id,
-                texts?.ru?.text,
-                texts?.uz?.text,
-                texts?.en?.text
-              );
-            });
-          }
-        });
-      }
+      addBlock(sectionId).then((data) => {
+        addFile(data.block_id, addedFile.formData).then((data) =>
+          addAlt(
+            data.file_id,
+            addedAltStates[0]?.ru?.text,
+            addedAltStates[0]?.uz?.text,
+            addedAltStates[0]?.en?.text
+          )
+        );
+        if (block?.texts[0].id) {
+          addedTextStates.map((texts) => {
+            addText(
+              data.block_id,
+              texts?.ru?.text,
+              texts?.uz?.text,
+              texts?.en?.text
+            );
+          });
+        }
+      });
+      router.push("/adminvenkon");
     } else {
       addBlock(sectionId).then((data) => {
         addedTextStates.map((texts) => {
@@ -83,6 +84,7 @@ export default function ContentAdminAdd({ block, sectionId }) {
           );
         });
       });
+      router.push("/adminvenkon");
     }
   };
 

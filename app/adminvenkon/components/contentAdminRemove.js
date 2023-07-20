@@ -1,12 +1,15 @@
 "use client";
 
 import { deleteBlock } from "@/services/admin";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function ContentAdminRemove({ blockId }) {
   const [isDelete, setIsDelete] = useState(false);
+  const router = useRouter();
   const handleDelete = () => {
     deleteBlock(blockId);
+    router.push("/adminvenkon");
   };
   return (
     <div style={{ color: "red", fontWeight: "500", margin: "10px 0px" }}>
