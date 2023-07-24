@@ -8,7 +8,7 @@ export default function LoadingHome() {
         height: "80vh",
       }}
     >
-      <div clasclassNames="mul7">
+      <div className="mul7">
         <div className="mul7circ m7c1"></div>
         <div className="mul7circ m7c2"></div>
         <div className="mul7circ m7c3"></div>
