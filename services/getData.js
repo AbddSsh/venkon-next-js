@@ -15,3 +15,21 @@ export const getData = async (id, lang) => {
   const data = await response.json();
   return data;
 };
+
+export const sendMail = async (
+  firstName,
+  lastName,
+  email,
+  phoneNumber,
+  message
+) => {
+  const { data } = await $host.post(`/vencon/user/send/mail`, {
+    first_name: firstName,
+    surname: lastName,
+    mail: email,
+    phone: phoneNumber,
+    text: message,
+  });
+  console.log(data);
+  return data;
+};

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "react-bootstrap/Modal";
 import { HiOutlineMail } from "react-icons/hi";
+import { sendMail } from "@/services/getData";
 
 const EmailModal = ({ lng }) => {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +20,20 @@ const EmailModal = ({ lng }) => {
     mode: "onChange",
   });
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    sendMail(
+      data.firstName,
+      data.lastName,
+      data.email,
+      data.phoneNumber,
+      data.message
+    );
+    alert(
+      lng === "ru"
+        ? "Сообщение успешно доставлено. Спасибо за обращение!"
+        : lng === "en"
+        ? "The message was successfully delivered. Thank you for your feedback!"
+        : "Xabar muvaffaqiyatli yetkazib berildi. Fikr-mulohazangiz uchun rahmat!"
+    );
     reset();
   };
   return (
@@ -113,6 +127,7 @@ const EmailModal = ({ lng }) => {
                     {...register("message", {
                       required: true,
                       minLength: 5,
+                      maxLength: 2000,
                     })}
                     className="form-input"
                     style={{ width: "150%", borderRadius: "5px" }}

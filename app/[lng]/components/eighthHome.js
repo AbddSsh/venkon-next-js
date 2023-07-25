@@ -1,5 +1,6 @@
 "use client";
 
+import { sendMail } from "@/services/getData";
 import { useForm } from "react-hook-form";
 
 const EighthHome = ({ lng }) => {
@@ -12,7 +13,20 @@ const EighthHome = ({ lng }) => {
     mode: "onChange",
   });
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    sendMail(
+      data.firstName,
+      data.lastName,
+      data.email,
+      data.phoneNumber,
+      data.message
+    );
+    alert(
+      lng === "ru"
+        ? "Сообщение успешно доставлено. Спасибо за обращение!"
+        : lng === "en"
+        ? "The message was successfully delivered. Thank you for your feedback!"
+        : "Xabar muvaffaqiyatli yetkazib berildi. Fikr-mulohazangiz uchun rahmat!"
+    );
     reset();
   };
   return (
@@ -107,6 +121,7 @@ const EighthHome = ({ lng }) => {
                   {...register("message", {
                     required: true,
                     minLength: 5,
+                    maxLength: 2000,
                   })}
                   className="form-input home_input"
                   style={{ width: "100%", borderRadius: "5px" }}
