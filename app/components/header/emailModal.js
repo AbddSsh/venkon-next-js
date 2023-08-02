@@ -130,7 +130,7 @@ const EmailModal = ({ lng }) => {
                       maxLength: 2000,
                     })}
                     className="form-input"
-                    style={{ width: "150%", borderRadius: "5px" }}
+                    style={{ width: "120%", borderRadius: "5px" }}
                   ></textarea>
                 </label>
               </div>
