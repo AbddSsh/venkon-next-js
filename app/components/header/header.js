@@ -22,8 +22,8 @@ const TheHeader = async ({ lng }) => {
               style={{
                 width: "100%",
               }}
-              src="https://static.wixstatic.com/media/474cdc_1d4329a980d54079b9bb30fd80b3f2f1~mv2.png/v1/fit/w_2500,h_1330,al_c/474cdc_1d4329a980d54079b9bb30fd80b3f2f1~mv2.png"
-              alt="альтернативный текст"
+              src="/logo-1.png"
+              alt="логотип Venkon Communications"
               className="logo-header"
             />
           </Link>

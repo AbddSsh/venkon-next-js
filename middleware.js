@@ -22,7 +22,8 @@ export function middleware(req) {
   if (
     !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
     !req.nextUrl.pathname.startsWith("/_next") &&
-    !req.nextUrl.pathname.startsWith("/adminvenkon")
+    !req.nextUrl.pathname.startsWith("/adminvenkon") &&
+    !req.nextUrl.pathname.startsWith("/logo-1.png")
   ) {
     return NextResponse.redirect(
       new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
