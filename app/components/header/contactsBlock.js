@@ -39,7 +39,7 @@ export default function ContactsBlock({ handleContact, lng }) {
       </div>
       <EmailModal lng={lng} onClick={handleContact} />
       <div className="contacts-media">
-        <a href="https://t.me/example" target="_blank">
+        <a href="https://t.me/VenkonPRSales" target="_blank">
           <BsTelegram
             style={{
               fontSize: "32px",
@@ -49,7 +49,10 @@ export default function ContactsBlock({ handleContact, lng }) {
             }}
           />
         </a>
-        <a href="https://instagram.com" target="_blank">
+        <a
+          href="https://www.instagram.com/venkon_cummunications/"
+          target="_blank"
+        >
           <InstagramIcon />
         </a>
       </div>

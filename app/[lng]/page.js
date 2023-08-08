@@ -9,17 +9,17 @@ import SeventhHome from "./components/seventhHome";
 import EighthHome from "./components/eighthHome";
 
 export async function generateMetadata({ params: { lng } }) {
-  const pageId = 4;
+  const pageId = 2;
   const response = await getData(pageId, lng);
   return {
-    title: response.seo_title,
-    description: response.seo_description,
-    keywords: response.seo_keywords,
+    title: response?.seo_title,
+    description: response?.seo_description,
+    keywords: response?.seo_keywords,
   };
 }
 
 export default async function Home({ params: { lng } }) {
-  const pageId = 4;
+  const pageId = 2;
   const response = await getData(pageId, lng);
   return (
     <>

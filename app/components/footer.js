@@ -19,8 +19,8 @@ const TheFooter = ({ lng }) => {
           {lng === "ru"
             ? "© 2023 Venkon Communications. Все права защищены."
             : lng === "en"
-            ? "© 2023 Venkon Communications. Все права защищены."
-            : "© 2023 Venkon Communications. Все права защищены."}
+            ? "© 2023 Venkon Communications. All rights reserved."
+            : "© 2023 Venkon Communications. Barcha huquqlar himoyalangan."}
         </div>
         <div
           style={{
@@ -43,9 +43,9 @@ const TheFooter = ({ lng }) => {
           </a>
           <div>
             {lng === "ru"
-              ? "Тошкент шахри, Юнусобод тумани, Боғишамол-19"
+              ? "город Ташкент, Юнусабадский район, Боғишамол-19"
               : lng === "en"
-              ? "Тошкент шахри, Юнусобод тумани, Боғишамол-19"
+              ? "Tashkent city, Yunusobod district, st.  Боғишамол-19"
               : "Тошкент шахри, Юнусобод тумани, Боғишамол-19"}
           </div>
         </div>

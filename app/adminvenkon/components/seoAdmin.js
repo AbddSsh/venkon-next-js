@@ -55,7 +55,7 @@ export default function SeoAdmin({ seo, lng, pageId }) {
               }}
             >
               <span style={{ fontWeight: "500", marginBottom: "10px" }}>
-                Title:{" "}
+                Title {lng}:{" "}
               </span>
               <input
                 style={{
@@ -78,7 +78,7 @@ export default function SeoAdmin({ seo, lng, pageId }) {
               }}
             >
               <span style={{ fontWeight: "500", marginBottom: "10px" }}>
-                Description:{" "}
+                Description {lng}:{" "}
               </span>
               <input
                 style={{
@@ -101,7 +101,7 @@ export default function SeoAdmin({ seo, lng, pageId }) {
               }}
             >
               <span style={{ fontWeight: "500", marginBottom: "10px" }}>
-                Keywords:{" "}
+                Keywords {lng}:{" "}
               </span>
               <input
                 style={{

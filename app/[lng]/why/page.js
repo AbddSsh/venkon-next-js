@@ -8,9 +8,9 @@ export async function generateMetadata({ params: { lng } }) {
   const pageId = 3;
   const response = await getData(pageId, lng);
   return {
-    title: response.seo_title,
-    description: response.seo_description,
-    keywords: response.seo_keywords,
+    title: response?.seo_title,
+    description: response?.seo_description,
+    keywords: response?.seo_keywords,
   };
 }
 
@@ -21,19 +21,19 @@ export default async function WhyWe({ params: { lng } }) {
     <>
       <div>
         <div>
-          <FirstSection section={response.sections[0]} />
+          <FirstSection section={response?.sections[0]} />
         </div>
         <div>
-          <SecondSection section={response.sections[1]} lng={lng} />
+          <SecondSection section={response?.sections[1]} lng={lng} />
         </div>
         {/* <div>
           <ThirdSectionV section={response.sections[2]} lng={lng} />
         </div> */}
         <div>
-          <ThirdSection section={response.sections[2]} lng={lng} />
+          <ThirdSection section={response?.sections[2]} lng={lng} />
         </div>
         <div>
-          <FourthSection section={response.sections[3]} lng={lng} />
+          <FourthSection section={response?.sections[3]} lng={lng} />
         </div>
       </div>
     </>

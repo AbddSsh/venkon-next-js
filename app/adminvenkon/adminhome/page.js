@@ -16,7 +16,7 @@ import SeventhHome from "@/app/[lng]/components/seventhHome";
 export default function HomeAdmin() {
   const { isAuth } = useContext(AuthContext);
   const [data, setData] = useState(null);
-  const pageId = 4;
+  const pageId = 2;
   const router = useRouter();
 
   useEffect(() => {
