@@ -39,8 +39,8 @@ export default function FifthHome({ section, isAdmin, pageId, lng }) {
                   className={styles.fifth_image}
                   src={block?.files[0]?.url}
                   alt={block?.files[0]?.alts[0]?.text}
-                  width={400}
-                  height={400}
+                  width={2000}
+                height={2000}
                 />
               </div>
             </div>
