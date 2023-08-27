@@ -52,8 +52,8 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
                 className={styles.fourth_image}
                 src={block?.files[0]?.url}
                 alt={block?.files[0]?.alts[0]?.text}
-                width={2000}
-                height={2000}
+                width={1500}
+                height={1500}
                 loading="lazy"
               />
             </div>

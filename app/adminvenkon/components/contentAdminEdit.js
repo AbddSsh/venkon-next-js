@@ -5,6 +5,7 @@ import {
   putContentFile,
   putContentText,
 } from "@/services/admin";
+import { invalidateCache, isCacheInvalidated } from "@/services/cache";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -57,6 +58,7 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
         putContentText(text.id, text.text);
       });
     }
+    invalidateCache();
     router.push("/adminvenkon");
   };
   useEffect(() => {

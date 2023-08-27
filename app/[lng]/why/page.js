@@ -26,9 +26,6 @@ export default async function WhyWe({ params: { lng } }) {
         <div>
           <SecondSection section={response?.sections[1]} lng={lng} />
         </div>
-        {/* <div>
-          <ThirdSectionV section={response.sections[2]} lng={lng} />
-        </div> */}
         <div>
           <ThirdSection section={response?.sections[2]} lng={lng} />
         </div>

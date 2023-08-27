@@ -39,8 +39,8 @@ export default function SecondHome({ section, lng, pageId, isAdmin }) {
                   className={styles.second_image}
                   src={block?.files[0]?.url}
                   alt={block?.files[0]?.alts[0]?.text}
-                  width={400}
-                  height={400}
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
@@ -53,8 +53,8 @@ export default function SecondHome({ section, lng, pageId, isAdmin }) {
                     className={styles.second_image}
                     src={block?.files[0]?.url}
                     alt={block?.files[0]?.alts[0]?.text}
-                    width={2000}
-                    height={2000}
+                    width={500}
+                    height={500}
                   />
                 </div>
               </div>

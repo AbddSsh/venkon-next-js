@@ -21,28 +21,6 @@ export default function SecondSection({ section, lng, pageId, isAdmin }) {
           ? "Our possibilities"
           : "Bizning imkoniyatlarimiz"}
       </h2>
-      {/* <SwiperCarousel section={section} /> */}
-      {/* <Swiper
-        slidesPerView={2}
-        loop={true}
-        navigation={true}
-        modules={[Navigation]}
-      >
-        {section.blocks.map((block, index) => (
-          <SwiperSlide key={index}>
-            <div key={block.id} className="sec-img-wrap">
-              <div className="sec-overlay">
-                <div className="sec-text">{block.texts[0].text}</div>
-              </div>
-              <img
-                className="sec-image"
-                src={block.files[0].url}
-                alt={block.files[0].alts.text}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper> */}
       <Swiper
         slidesPerView={1}
         loop={true}
@@ -58,8 +36,8 @@ export default function SecondSection({ section, lng, pageId, isAdmin }) {
                   className={styles.sec_image}
                   src={block?.files[0]?.url}
                   alt={block?.files[0]?.alts[0]?.text}
-                  width={2000}
-                  height={2000}
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>

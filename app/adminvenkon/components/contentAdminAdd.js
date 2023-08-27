@@ -1,6 +1,7 @@
 "use client";
 
 import { addAlt, addBlock, addFile, addText } from "@/services/admin";
+import { invalidateCache } from "@/services/cache";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -72,6 +73,7 @@ export default function ContentAdminAdd({ block, sectionId }) {
           });
         }
       });
+      invalidateCache();
       router.push("/adminvenkon");
     } else {
       addBlock(sectionId).then((data) => {
@@ -84,6 +86,7 @@ export default function ContentAdminAdd({ block, sectionId }) {
           );
         });
       });
+      invalidateCache();
       router.push("/adminvenkon");
     }
   };

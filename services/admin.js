@@ -112,6 +112,7 @@ export const addFile = async (blockId, formData) => {
       `/vencon/admin/add/file?block_id=${blockId}`,
       formData
     );
+    formData.delete("file");
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);

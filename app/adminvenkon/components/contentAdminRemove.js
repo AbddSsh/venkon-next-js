@@ -1,6 +1,7 @@
 "use client";
 
 import { deleteBlock } from "@/services/admin";
+import { invalidateCache } from "@/services/cache";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -9,6 +10,7 @@ export default function ContentAdminRemove({ blockId }) {
   const router = useRouter();
   const handleDelete = () => {
     deleteBlock(blockId);
+    invalidateCache();
     router.push("/adminvenkon");
   };
   return (

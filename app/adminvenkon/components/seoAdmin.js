@@ -23,6 +23,9 @@ export default function SeoAdmin({ seo, lng, pageId }) {
     event.preventDefault();
     putPageSeo(pageId, lng, title, description, keywords);
     setIsChange(false);
+    setTitle(null);
+    setDescription(null);
+    setKeywords(null);
   };
   return (
     <div style={{ marginBottom: "20px" }}>
