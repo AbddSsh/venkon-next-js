@@ -5,7 +5,7 @@ export default function WhyWe({ lng }) {
     <div>
       <Link
         className="my-link"
-        href={`${lng}/why`}
+        href={`/${lng}/why`}
         style={{
           color: "#463B90",
           fontWeight: "600",

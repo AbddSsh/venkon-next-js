@@ -61,7 +61,7 @@ export default function FourthSection({ section, lng, pageId, isAdmin }) {
               {isAdmin && (
                 <div>
                   <ContentAdminEdit block={block} pageId={pageId} lng={lng} />
-                  <ContentAdminRemove blockId={block.id} />
+                  <ContentAdminRemove blockId={block.id} pageId={pageId} />
                 </div>
               )}
             </div>

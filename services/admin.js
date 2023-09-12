@@ -179,3 +179,14 @@ export const deleteBlock = async (blockId) => {
     alert(`Ошибка... ${error}. НЕВОЗМОЖНО УДАЛИТЬ ПОСЛЕДНИЙ ОСТАВШИЙСЯ БЛОК.`);
   }
 };
+
+export const getRevalidate = async (path) => {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/api/revalidate?path=${path}&secret=venkon_secret_token`
+    );
+    return response;
+  } catch (error) {
+    alert("Что-то пошло не так");
+  }
+};

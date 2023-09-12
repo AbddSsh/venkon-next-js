@@ -1,11 +1,11 @@
 "use client";
 
 import {
+  getRevalidate,
   putContentAlt,
   putContentFile,
   putContentText,
 } from "@/services/admin";
-import { invalidateCache, isCacheInvalidated } from "@/services/cache";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -58,7 +58,9 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
         putContentText(text.id, text.text);
       });
     }
-    invalidateCache();
+    getRevalidate(pageId == 2 ? "/ru" : "/ru/why");
+    getRevalidate(pageId == 2 ? "/en" : "/en/why");
+    getRevalidate(pageId == 2 ? "/uz" : "/uz/why");
     router.push("/adminvenkon");
   };
   useEffect(() => {

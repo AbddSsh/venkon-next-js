@@ -47,14 +47,18 @@ export default function FifthHome({ section, isAdmin, pageId, lng }) {
             {isAdmin && (
               <div>
                 <ContentAdminEdit block={block} pageId={pageId} lng={lng} />
-                <ContentAdminRemove blockId={block.id} />
+                <ContentAdminRemove blockId={block.id} pageId={pageId} />
               </div>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
       {isAdmin && (
-        <ContentAdminAdd block={section?.blocks[0]} sectionId={section.id} />
+        <ContentAdminAdd
+          block={section?.blocks[0]}
+          sectionId={section.id}
+          pageId={pageId}
+        />
       )}
     </div>
   );

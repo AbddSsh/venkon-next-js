@@ -1,11 +1,16 @@
 "use client";
 
-import { addAlt, addBlock, addFile, addText } from "@/services/admin";
-import { invalidateCache } from "@/services/cache";
+import {
+  addAlt,
+  addBlock,
+  addFile,
+  addText,
+  getRevalidate,
+} from "@/services/admin";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function ContentAdminAdd({ block, sectionId }) {
+export default function ContentAdminAdd({ block, sectionId, pageId }) {
   const [isAdd, setIsAdd] = useState(false);
   const lng = ["ru", "uz", "en"];
   const [addedTextStates, setAddedTextStates] = useState([]);
@@ -73,7 +78,9 @@ export default function ContentAdminAdd({ block, sectionId }) {
           });
         }
       });
-      invalidateCache();
+      getRevalidate(pageId == 2 ? "/ru" : "/ru/why");
+      getRevalidate(pageId == 2 ? "/en" : "/en/why");
+      getRevalidate(pageId == 2 ? "/uz" : "/uz/why");
       router.push("/adminvenkon");
     } else {
       addBlock(sectionId).then((data) => {

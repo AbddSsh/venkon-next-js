@@ -1,16 +1,17 @@
 "use client";
 
-import { deleteBlock } from "@/services/admin";
-import { invalidateCache } from "@/services/cache";
+import { deleteBlock, getRevalidate } from "@/services/admin";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function ContentAdminRemove({ blockId }) {
+export default function ContentAdminRemove({ blockId, pageId }) {
   const [isDelete, setIsDelete] = useState(false);
   const router = useRouter();
   const handleDelete = () => {
     deleteBlock(blockId);
-    invalidateCache();
+    getRevalidate(pageId == 2 ? "/ru" : "/ru/why");
+    getRevalidate(pageId == 2 ? "/en" : "/en/why");
+    getRevalidate(pageId == 2 ? "/uz" : "/uz/why");
     router.push("/adminvenkon");
   };
   return (
