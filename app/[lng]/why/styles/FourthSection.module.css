@@ -36,12 +36,12 @@
 }
 .fourth_text_title {
   font-weight: 700;
-  font-size: 44px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 .fourth_text_text {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 26px;
   max-height: 100%;
   overflow-y: auto;
   margin: 0;
@@ -66,11 +66,11 @@
 }
 @media (max-width: 1599px) {
   .fourth_text_title {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 10px;
   }
   .fourth_text_text {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 @media (max-width: 1199px) {
@@ -81,10 +81,10 @@
     border-radius: 30px;
   }
   .fourth_text_title {
-    font-size: 28px;
+    font-size: 24px;
   }
   .fourth_text_text {
-    font-size: 20px;
+    font-size: 14px;
   }
   .fourth_image {
     border-radius: 30px;
@@ -101,10 +101,10 @@
     border-radius: 25px;
   }
   .fourth_text_title {
-    font-size: 24px;
+    font-size: 22px;
   }
   .fourth-text-text {
-    font-size: 18px;
+    font-size: 14px;
   }
   .fourth_image {
     border-radius: 25px;
@@ -123,11 +123,11 @@
     border-radius: 20px;
   }
   .fourth_text_title {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
   .fourth_text_text {
-    font-size: 16px;
+    font-size: 14px;
   }
   .fourth_image {
     border-radius: 20px;

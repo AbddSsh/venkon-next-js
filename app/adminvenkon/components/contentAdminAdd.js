@@ -7,6 +7,7 @@ import {
   addText,
   getRevalidate,
 } from "@/services/admin";
+import { revalidatePath } from "next/cache";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -81,6 +82,7 @@ export default function ContentAdminAdd({ block, sectionId, pageId }) {
       getRevalidate(pageId == 2 ? "/ru" : "/ru/why");
       getRevalidate(pageId == 2 ? "/en" : "/en/why");
       getRevalidate(pageId == 2 ? "/uz" : "/uz/why");
+
       router.push("/adminvenkon");
     } else {
       addBlock(sectionId).then((data) => {

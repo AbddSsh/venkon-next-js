@@ -183,10 +183,10 @@ export const deleteBlock = async (blockId) => {
 export const getRevalidate = async (path) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/revalidate?path=${path}&secret=venkon_secret_token`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/revalidate?path=${path}`
     );
     return response;
   } catch (error) {
-    alert("Что-то пошло не так");
+    alert("Ревалидация не удалась...");
   }
 };

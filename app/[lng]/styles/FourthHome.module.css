@@ -2,12 +2,12 @@
   margin-bottom: 5%;
 }
 .fourth_main_title {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 500;
   margin-bottom: 1%;
 }
 .fourth_sec_title {
-  font-size: 36px;
+  font-size: 30px;
 }
 .fourth_wrapper {
   display: grid;
@@ -22,7 +22,7 @@
   padding: 5%;
 }
 .fourth_title {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   margin: 0;
   margin-bottom: 5%;
@@ -34,7 +34,7 @@
 }
 .fourth_text {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   flex-grow: 1;
   margin: 0;
 }
@@ -45,16 +45,16 @@
 }
 @media (max-width: 1599px) {
   .fourth_main_title {
-    font-size: 38px;
-  }
-  .fourth_sec_title {
     font-size: 28px;
   }
+  .fourth_sec_title {
+    font-size: 24px;
+  }
   .fourth_title {
-    font-size: 30px;
+    font-size: 22px;
   }
   .fourth_text {
-    font-size: 22px;
+    font-size: 16px;
   }
 }
 @media (max-width: 1199px) {
@@ -62,16 +62,16 @@
     gap: 10px;
   }
   .fourth_main_title {
-    font-size: 34px;
-  }
-  .fourth_sec_title {
     font-size: 24px;
   }
+  .fourth_sec_title {
+    font-size: 20px;
+  }
   .fourth_title {
-    font-size: 26px;
+    font-size: 18px;
   }
   .fourth_text {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 @media (max-width: 991px) {
@@ -86,20 +86,20 @@
     padding: 2%;
   }
   .fourth_main_title {
-    font-size: 28px;
+    font-size: 20px;
   }
   .fourth_sec_title {
-    font-size: 18px;
+    font-size: 16px;
   }
   .fourth_title {
-    font-size: 22px;
+    font-size: 16px;
     margin-bottom: 2.5%;
   }
   .fourth_text_wrap {
     height: 10vw;
   }
   .fourth_text {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 @media (min-width: 769px) {
@@ -109,7 +109,7 @@
     gap: 10px;
   }
   .fourth_main_title {
-    font-size: 24px;
+    font-size: 18px;
   }
   .fourth_sec_title {
     font-size: 14px;
@@ -118,10 +118,10 @@
     border-radius: 10px;
   }
   .fourth_title {
-    font-size: 18px;
+    font-size: 14px;
   }
   .fourth_text {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media (max-width: 576px) {
@@ -133,32 +133,20 @@
     font-size: 12px;
   }
   .fourth_title {
-    font-size: 14px;
+    font-size: 12px;
   }
   .fourth_text_wrap {
     height: 15vw;
   }
   .fourth_text {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 @media (max-width: 367px) {
   .fourth_wrapper {
     gap: 5px;
   }
-  .fourth_main_title {
-    font-size: 14px;
-  }
-  .fourth_sec_title {
-    font-size: 10px;
-  }
   .fourth_block {
     border-radius: 5px;
-  }
-  .fourth_title {
-    font-size: 12px;
-  }
-  .fourth_text {
-    font-size: 10px;
   }
 }

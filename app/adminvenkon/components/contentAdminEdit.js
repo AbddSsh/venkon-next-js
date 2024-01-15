@@ -6,6 +6,7 @@ import {
   putContentFile,
   putContentText,
 } from "@/services/admin";
+import { revalidatePath } from "next/cache";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
