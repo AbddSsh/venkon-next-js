@@ -187,6 +187,6 @@ export const getRevalidate = async (path) => {
     );
     return response;
   } catch (error) {
-    alert("Ревалидация не удалась...");
+    console.log(error)
   }
 };
