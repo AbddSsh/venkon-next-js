@@ -59,9 +59,9 @@ export default function ContentAdminEdit({ block, pageId, lng }) {
         putContentText(text.id, text.text);
       });
     }
-    getRevalidate(pageId == 2 ? "/ru" : "/ru/why");
-    getRevalidate(pageId == 2 ? "/en" : "/en/why");
-    getRevalidate(pageId == 2 ? "/uz" : "/uz/why");
+    getRevalidate(pageId == 2 ? "/ru" : "/ru/whyvenkoncommunications");
+    getRevalidate(pageId == 2 ? "/en" : "/en/whyvenkoncommunications");
+    getRevalidate(pageId == 2 ? "/uz" : "/uz/whyvenkoncommunications");
     router.push("/adminvenkon");
   };
   useEffect(() => {

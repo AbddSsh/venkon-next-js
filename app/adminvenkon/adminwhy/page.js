@@ -3,10 +3,10 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../layout";
 import { useRouter } from "next/navigation";
-import FirstSection from "@/app/[lng]/why/components/firstSection";
-import SecondSection from "@/app/[lng]/why/components/secondSection";
-import ThirdSection from "@/app/[lng]/why/components/thirdSection";
-import FourthSection from "@/app/[lng]/why/components/fourthSection";
+import FirstSection from "@/app/[lng]/whyvenkoncommunications/components/firstSection";
+import SecondSection from "@/app/[lng]/whyvenkoncommunications/components/secondSection";
+import ThirdSection from "@/app/[lng]/whyvenkoncommunications/components/thirdSection";
+import FourthSection from "@/app/[lng]/whyvenkoncommunications/components/fourthSection";
 import SeoAdmin from "../components/seoAdmin";
 import { getData } from "@/services/getData";
 

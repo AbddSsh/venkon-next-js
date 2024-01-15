@@ -53,7 +53,6 @@ export default function ContentAdminAdd({ block, sectionId, pageId }) {
       };
       return updatedStates;
     });
-    console.log(addedTextStates);
   };
 
   const handleSubmit = (event) => {
@@ -79,9 +78,9 @@ export default function ContentAdminAdd({ block, sectionId, pageId }) {
           });
         }
       });
-      getRevalidate(pageId == 2 ? "/ru" : "/ru/why");
-      getRevalidate(pageId == 2 ? "/en" : "/en/why");
-      getRevalidate(pageId == 2 ? "/uz" : "/uz/why");
+      getRevalidate(pageId == 2 ? "/ru" : "/ru/whyvenkoncommunications");
+      getRevalidate(pageId == 2 ? "/en" : "/en/whyvenkoncommunications");
+      getRevalidate(pageId == 2 ? "/uz" : "/uz/whyvenkoncommunications");
 
       router.push("/adminvenkon");
     } else {
