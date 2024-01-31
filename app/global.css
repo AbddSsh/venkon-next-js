@@ -160,7 +160,7 @@ footer {
   margin-bottom: 15px;
 }
 .form-input {
-  width: 80%;
+  width: 100%;
   border-radius: 10px;
   border: 0.5px solid rgb(70, 59, 144);
   padding: 5px;
@@ -184,6 +184,7 @@ footer {
   font-weight: 600;
   font-size: 12px;
   margin-bottom: 10px;
+  width: 100%;
 }
 .home_email {
 }

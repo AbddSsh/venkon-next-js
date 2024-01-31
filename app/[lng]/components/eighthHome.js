@@ -32,9 +32,6 @@ const EighthHome = ({ lng }) => {
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         marginBottom: "5%",
       }}
     >
@@ -60,7 +57,7 @@ const EighthHome = ({ lng }) => {
                 className="form-input home_input"
                 {...register("firstName", {
                   required: true,
-                  minLength: 3,
+                  minLength: 1,
                 })}
               />
             </label>
@@ -75,7 +72,7 @@ const EighthHome = ({ lng }) => {
                 className="form-input home_input"
                 {...register("lastName", {
                   required: true,
-                  minLength: 3,
+                  minLength: 1,
                 })}
               />
             </label>
@@ -86,7 +83,7 @@ const EighthHome = ({ lng }) => {
                 className="form-input home_input"
                 {...register("email", {
                   required: true,
-                  minLength: 3,
+                  minLength: 1,
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 })}
               />
@@ -104,7 +101,7 @@ const EighthHome = ({ lng }) => {
                 className="form-input number-input home_input"
                 {...register("phoneNumber", {
                   required: true,
-                  minLength: 3,
+                  minLength: 1,
                   maxLength: 13,
                   pattern: /^\+998\d{9}$/,
                 })}
@@ -120,7 +117,7 @@ const EighthHome = ({ lng }) => {
                 <textarea
                   {...register("message", {
                     required: true,
-                    minLength: 5,
+                    minLength: 1,
                     maxLength: 2000,
                   })}
                   className="form-input home_input"

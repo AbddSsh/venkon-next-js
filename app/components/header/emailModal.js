@@ -130,7 +130,6 @@ const EmailModal = ({ lng }) => {
                       maxLength: 2000,
                     })}
                     className="form-input"
-                    style={{ width: "120%", borderRadius: "5px" }}
                   ></textarea>
                 </label>
               </div>
@@ -139,11 +138,11 @@ const EmailModal = ({ lng }) => {
                 disabled={!isValid}
                 className="send-message-btn"
                 style={{
-                  width: "70%",
                   fontWeight: "normal",
                   border: "none",
                   padding: "7px",
                   background: !isValid && "rgba(70,59,144, 0.4)",
+                  margin: "3% 0px",
                 }}
                 onClick={handleModal}
                 value={
