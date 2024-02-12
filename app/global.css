@@ -34,7 +34,7 @@ main {
 }
 .my-container {
   max-width: 100%;
-  padding: 0px 80px;
+  padding: 0px 30px;
 }
 
 .my-link {
@@ -320,63 +320,30 @@ footer {
 
 /* PAGE WHY VENKON */
 .why-wrapper {
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 /* SWIPER */
 .swiper-wrapper {
   align-items: center;
 }
+
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
-  content: "";
-  color: rgb(103, 39, 175);
-  /* background: rgba(255, 255, 255, 0.7); */
-  padding: 80% 150% 80% 150%;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 4em !important;
+  font-size: 1.5em !important;
+  padding: 20% 40% 20% 50%;
+  margin-left: 80%;
+  margin-right: -40%;
 }
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-prev:after {
-  content: "";
-  color: rgb(103, 39, 175);
-  /* background: rgba(255, 255, 255, 0.8); */
-  padding: 80% 150% 80% 150%;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 4em !important;
+  font-size: 1.5em !important;
+  padding: 20% 50% 20% 40%;
+  margin-right: 80%;
+  margin-left: -40%;
 }
 
 /* MEDIA */
-@media (min-width: 2000px) {
-  .my-container {
-    padding: 0px 80px;
-  }
-}
-@media (max-width: 1999px) {
-  .my-container {
-    padding: 0px 80px;
-  }
-}
-@media (max-width: 1599px) {
-  .my-container {
-    padding: 0px 50px;
-  }
-  .why-wrapper {
-    margin-bottom: 80px;
-  }
-  .swiper-button-next:after,
-  .swiper-container-rtl .swiper-button-prev:after {
-    padding: 60% 120% 60% 120%;
-    font-size: 3em !important;
-  }
-  .swiper-button-prev:after,
-  .swiper-container-rtl .swiper-button-prev:after {
-    padding: 60% 120% 60% 120%;
-    font-size: 3em !important;
-  }
-}
 @media (max-width: 1199px) {
   .my-container {
     padding: 0px 30px;

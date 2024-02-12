@@ -54,13 +54,10 @@
   object-fit: cover;
   object-position: center;
   z-index: 1;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 @media (min-width: 2000px) {
-  .fourth_image {
-    max-height: 800px;
-  }
 }
 @media (max-width: 1999px) {
 }
@@ -71,6 +68,11 @@
   }
   .fourth_text_text {
     font-size: 22px;
+  }
+}
+@media (min-width: 1200px) {
+  .fourth_image {
+    max-height: 560px;
   }
 }
 @media (max-width: 1199px) {
@@ -131,7 +133,7 @@
   }
   .fourth_image {
     border-radius: 20px;
-    max-height: 45vw;
+    height: 45vw;
   }
 }
 @media (max-width: 576px) {
@@ -157,7 +159,6 @@
   }
   .fourth_image {
     border-radius: 10px;
-    height: 100vw;
   }
 }
 @media (max-width: 367px) {

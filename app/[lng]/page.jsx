@@ -5,8 +5,8 @@ import ThirdHome from "./components/thirdHome";
 import FourthHome from "./components/fourthHome";
 import FifthHome from "./components/fifthHome";
 import SixthHome from "./components/sixthHome";
-import SeventhHome from "./components/seventhHome";
 import EighthHome from "./components/eighthHome";
+import SeventhHome from "./components/seventhHome";
 
 export async function generateMetadata({ params: { lng } }) {
   const pageId = 2;

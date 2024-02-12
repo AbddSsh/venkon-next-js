@@ -30,7 +30,7 @@
 .fourth_text_wrap {
   overflow-y: auto;
   height: 20vw;
-  max-height: 400px;
+  max-height: 300px;
 }
 .fourth_text {
   font-weight: 500;
