@@ -6,7 +6,7 @@
   grid-template: 1fr minmax(100px, auto) / 1fr;
   border-radius: 10px;
   margin: 0 4%;
-  padding: 3%;
+  padding: 3% 3% 5% 3%;
   height: 100%;
 }
 .seventh_title {
@@ -61,7 +61,7 @@
   .seventh_block {
     grid-template: 1fr minmax(50px, auto) / 1fr;
     border-radius: 15px;
-    padding: 2%;
+    padding: 2% 2% 4% 2%;
   }
   .seventh_title {
     font-size: 18px;
@@ -81,7 +81,7 @@
     gap: 10px;
   }
   .seventh_block {
-    padding: 4%;
+    padding: 2% 2% 5% 2%;
   }
   .seventh_title {
     font-size: 16px;

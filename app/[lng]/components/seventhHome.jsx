@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import ContentAdminRemove from "@/app/adminvenkon/components/contentAdminRemove";
 import ContentAdminAdd from "@/app/adminvenkon/components/contentAdminAdd";
 
@@ -20,7 +20,8 @@ export default function SeventhHome({ section, isAdmin, pageId, lng }) {
         slidesPerView={isMobile ? 1.2 : 1}
         loop={true}
         navigation={isMobile ? false : true}
-        modules={[Navigation]}
+        pagination={isMobile ? false : true}
+        modules={[Navigation, Pagination]}
       >
         {section?.blocks.map((block, index) => (
           <SwiperSlide key={block.id}>
